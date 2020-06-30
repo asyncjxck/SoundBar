@@ -3,46 +3,46 @@
   ruby = User.create(email: "ruby@kitten.com", password_digest: "2222")
   blue = User.create(email: "blue@fatcat.com", password_digest: "3333")
 # create categories
-  string = Category.create(name: "String")
-  percussion = Category.create(name: "Percussion")
-  woodwind = Category.create(name: "Woodwind")
-  brass = Category.create(name: "Brass")
-  key = Category.create(name: "Keyboard")
+  string = Category.create(name: "string")
+  percussion = Category.create(name: "percussion")
+  woodwind = Category.create(name: "woodwind")
+  brass = Category.create(name: "brass")
+  keyboard = Category.create(name: "keyboard")
 # create brands
   # string
-    martin = Brand.create(name: "C.F. Martin & Co.", category: :string, available: true)
-    taylor = Brand.create(name: "Taylor", category: "String", available: true)
-    gibson = Brand.create(name: "Gibson", category: "String", available: true)
-    fender = Brand.create(name: "Fender", category: "String", available: true)
-    ibanez = Brand.create(name: "Ibanez", category: "String", available: true)
+    martin = string.brands.create(name: "C.F. Martin & Co.", available: true)
+    taylor = string.brands.create(name: "Taylor", available: true)
+    gibson = string.brands.create(name: "Gibson", available: true)
+    fender = string.brands.create(name: "Fender", available: true)
+    ibanez = string.brands.create(name: "Ibanez", available: true)
   # percussion
-    sonor = Brand.create(name: "Sonor", category: "Percussion", available: true)
-    gretsch = Brand.create(name: "Gretsch", category: "Percussion", available: true)
-    pearl = Brand.create(name: "Pearl", category: "Percussion", available: true)
-    ludwig = Brand.create(name: "Ludwig", category: "Percussion", available: true)
-    bdc = Brand.create(name: "British Drum Company", category: "Percussion", available: true)
+    sonor = percussion.brands.create(name: "Sonor", available: true)
+    gretsch = percussion.brands.create(name: "Gretsch", available: true)
+    pearl = percussion.brands.create(name: "Pearl", available: true)
+    ludwig = percussion.brands.create(name: "Ludwig", available: true)
+    bdc = percussion.brands.create(name: "British Drum Company", available: true)
   # woodwind
-    fox = Brand.create(name: "Fox", category: "Woodwind", available: true)
-    allora = Brand.create(name: "Allora", category: "Woodwind", available: true)
-    conn = Brand.create(name: "Conn-Selmer", category: "Woodwind", available: true)
-    etude = Brand.create(name: "Etude", category: "Woodwind", available: true)
-    buffet = Brand.create(name: "Buffet-Crampon", category: "Woodwind", available: true)
+    fox = woodwind.brands.create(name: "Fox", available: true)
+    allora = woodwind.brands.create(name: "Allora", available: true)
+    conn = woodwind.brands.create(name: "Conn-Selmer", available: true)
+    etude = woodwind.brands.create(name: "Etude", available: true)
+    buffet = brass.brands.create(name: "Buffet-Crampon", available: true)
   # brass
-    warburton = Brand.create(name: "Warburton", category: "Brass", available: true)
-    kohler = Brand.create(name: "Köhler & Son", category: "Brass", available: true)
-    elden = Brand.create(name: "Elden Benge", category: "Brass", available: true)
-    bmic = Brand.create(name: "Boston Musical Instrument Company", category: "Brass", available: true)
-    nirshcl = Brand.create(name: "Nirschl", category: "Brass", available: true)
+    warburton = brass.brands.create(name: "Warburton", available: true)
+    kohler = brass.brands.create(name: "Köhler & Son", available: true)
+    elden = brass.brands.create(name: "Elden Benge", available: true)
+    bmic = brass.brands.create(name: "Boston Musical Instrument Company", available: true)
+    nirshcl = brass.brands.create(name: "Nirschl", available: true)
   # keyboard
-    yamaha = Brand.create(name: "Yamaha", category: "Keyboard", available: true)
-    casio = Brand.create(name: "Casio", category: "Keyboard", available: true)
-    roland = Brand.create(name: "Roland", category: "Keyboard", available: true)
-    kawai = Brand.create(name: "Kawai", category: "Keyboard", available: true)
-    korg = Brand.create(name: "korg", category: "Keyboard", available: true)
+    yamaha = keyboard.brands.create(name: "Yamaha", available: true)
+    casio = keyboard.brands.create(name: "Casio", available: true)
+    roland = keyboard.brands.create(name: "Roland", available: true)
+    kawai = keyboard.brands.create(name: "Kawai", available: true)
+    korg = keyboard.brands.create(name: "korg", available: true)
 # create instruments
   # string
     # martin
-      d28 = Instrument.
+      
     # taylor
     # gibson
     # fender

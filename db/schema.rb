@@ -14,10 +14,11 @@ ActiveRecord::Schema.define(version: 2020_06_29_155453) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
-    t.string "category"
     t.boolean "available"
+    t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_brands_on_category_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -26,7 +27,7 @@ ActiveRecord::Schema.define(version: 2020_06_29_155453) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "intruments", force: :cascade do |t|
+  create_table "instruments", force: :cascade do |t|
     t.string "type"
     t.string "description"
     t.integer "brand_id"
@@ -34,9 +35,9 @@ ActiveRecord::Schema.define(version: 2020_06_29_155453) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["brand_id"], name: "index_intruments_on_brand_id"
-    t.index ["category_id"], name: "index_intruments_on_category_id"
-    t.index ["user_id"], name: "index_intruments_on_user_id"
+    t.index ["brand_id"], name: "index_instruments_on_brand_id"
+    t.index ["category_id"], name: "index_instruments_on_category_id"
+    t.index ["user_id"], name: "index_instruments_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -58,9 +59,10 @@ ActiveRecord::Schema.define(version: 2020_06_29_155453) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "intruments", "brands"
-  add_foreign_key "intruments", "categories"
-  add_foreign_key "intruments", "users"
+  add_foreign_key "brands", "categories"
+  add_foreign_key "instruments", "brands"
+  add_foreign_key "instruments", "categories"
+  add_foreign_key "instruments", "users"
   add_foreign_key "reviews", "instruments"
   add_foreign_key "reviews", "users"
 end
