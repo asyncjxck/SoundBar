@@ -1,3 +1,4 @@
 class Brand < ApplicationRecord
-  has_many :instrumnents
+  has_many :instruments
+  belongs_to :brand
 end

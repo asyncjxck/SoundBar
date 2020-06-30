@@ -4,6 +4,7 @@ class CreateBrands < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :category
       t.boolean :available
+      t.belongs_to :category
 
       t.timestamps
     end
