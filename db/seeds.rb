@@ -1,7 +1,7 @@
 # create users
-  jack = User.create(email: "jackson@me.com", password_digest: "1111")
-  ruby = User.create(email: "ruby@kitten.com", password_digest: "2222")
-  blue = User.create(email: "blue@fatcat.com", password_digest: "3333")
+  jack = User.create(name: "Jackson", email: "jackson@me.com", password_digest: "1111")
+  ruby = User.create(name: "Ruby", email: "ruby@kitten.com", password_digest: "2222")
+  blue = User.create(name: "Blue", email: "blue@fatcat.com", password_digest: "3333")
 # create categories
   string = Category.create(name: "string")
   percussion = Category.create(name: "percussion")
