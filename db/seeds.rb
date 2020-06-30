@@ -32,8 +32,8 @@
       d45 = User.find(2).instruments.create(model: "D-45 Fire & Ice", instrument_type: "Guitar", description: "6-string Acoustic Special Edition", price: "31,999.00", category_id: Category.find(1).id, brand_id: Brand.find(1).id)
       d15 = User.find(3).instruments.create(model: "D-15", instrument_type: "Guitar", description: "6-string Auditorium Acoustic", price: "1,299.00", category_id: Category.find(1).id, brand_id: Brand.find(1).id)
     # taylor
-      ce1 = User.find(1).instruments.create(model: "324ce", instrument_type: "Guitar", description: "6-string Electric/Acoustic", price: "2,199.00", category_id: Category.find(1).id, brand_id: Brand.find(2).id)
-      ce2 = User.find(2).instruments.create(model: "814ce", instrument_type: "Guitar", description: "6-string Electric/Acoustic V-class", price: "3,999.00", category_id: Category.find(1).id, brand_id: Brand.find(2).id)
+      ce324 = User.find(1).instruments.create(model: "324ce", instrument_type: "Guitar", description: "6-string Electric/Acoustic", price: "2,199.00", category_id: Category.find(1).id, brand_id: Brand.find(2).id)
+      ce814 = User.find(2).instruments.create(model: "814ce", instrument_type: "Guitar", description: "6-string Electric/Acoustic V-class", price: "3,999.00", category_id: Category.find(1).id, brand_id: Brand.find(2).id)
       gsmini = User.find(3).instruments.create(model: "GS Mini", instrument_type: "Guitar", description: "6-string Electric/Acoustic", price: "799.00", category_id: Category.find(1).id, brand_id: Brand.find(2).id)
     # gibson
       lespaul = User.find(1).instruments.create(model: "Les Paul '60s Bourbon Burst", instrument_type: "Guitar", description: "6-string Electric", price: "2,499.00", category_id: Category.find(1).id, brand_id: Brand.find(3).id)
@@ -66,34 +66,90 @@
       breakbeats = User.find(3).instruments.create(model: "Breakbeats by Questlove", instrument_type: "Drum Set", description: "4-Piece", price: "429.00", category_id: Category.find(2).id, brand_id: Brand.find(9).id)
     # bdc
       legend = User.find(1).instruments.create(model: "Legend Series", instrument_type: "Drum Set", description: "7-Piece", price: "5,942.27", category_id: Category.find(2).id, brand_id: Brand.find(10).id)
-      birch = User.find(2).instruments.create(model: "Legend Club Birch", instrument_type: "Drum Set", description: "3-Piece Birch", price: "2,569", category_id: Category.find(2).id, brand_id: Brand.find(10).id)
+      birch = User.find(2).instruments.create(model: "Legend Club Birch", instrument_type: "Drum Set", description: "Birch 3-Piece", price: "2,569", category_id: Category.find(2).id, brand_id: Brand.find(10).id)
       etimoe = User.find(3).instruments.create(model: "Wild Etimoe", instrument_type: "Drum Set", description: "4-Piece", price: "3,599.99", category_id: Category.find(2).id, brand_id: Brand.find(10).id)
   # keyboard
     # yamaha
+      f51 = User.find(1).instruments.create(model: "PSR-F51", instrument_type: "Keyboard", description: "61 Key Portable", price: "109.99", category_id: Category.find(3).id, brand_id: Brand.find(11).id)
+      arius = User.find(2).instruments.create(model: "Arius YDP-144", instrument_type: "Piano", description: "Digital Console Piano", price: "1099.99", category_id: Category.find(3).id, brand_id: Brand.find(11).id)
+      ypg535 = User.find(3).instruments.create(model: "YPG-535", instrument_type: "Piano", description: "88 Key Portable Grand Piano", price: "109.99", category_id: Category.find(3).id, brand_id: Brand.find(11).id)
     # casio
+      privia = User.find(1).instruments.create(model: "Privia PX-S3000", instrument_type: "Piano", description: "88 Key Stage Piano", price: "849.00", category_id: Category.find(3).id, brand_id: Brand.find(12).id)
+      casiotone = User.find(2).instruments.create(model: "Casiotone CT-S200", instrument_type: "Keyboard", description: "61 Key Portable Digital", price: "119.00", category_id: Category.find(3).id, brand_id: Brand.find(12).id)
+      ap710bk = User.find(3).instruments.create(model: "AP-710BK Celviano", instrument_type: "Piano", description: "88 Key Digital Piano", price: "2499.00", category_id: Category.find(3).id, brand_id: Brand.find(12).id)
     # roland
+      gopiano = User.find(1).instruments.create(model: "GO:PIANO", instrument_type: "Piano", description: "61 Key Digital Piano", price: "499.00", category_id: Category.find(3).id, brand_id: Brand.find(13).id)
+      rd88 = User.find(2).instruments.create(model: "RD-88", instrument_type: "Piano", description: "88 Key Stage Piano", price: "1,199.00", category_id: Category.find(3).id, brand_id: Brand.find(13).id)
+      gp609 = User.find(3).instruments.create(model: "GP-609", instrument_type: "Piano", description: "88 Key Digital Grand Piano", price: "9,999.00", category_id: Category.find(3).id, brand_id: Brand.find(13).id)
     # kawai
+      ca58 = User.find(1).instruments.create(model: "CA58", instrument_type: "Piano", description: "88 Key Digital Home Piano", price: "3,099.00", category_id: Category.find(3).id, brand_id: Brand.find(14).id)
+      es8 = User.find(2).instruments.create(model: "ES8", instrument_type: "Piano", description: "88 Key Digital Piano", price: "3,099.00", category_id: Category.find(3).id, brand_id: Brand.find(14).id)
+      mp11se = User.find(3).instruments.create(model: "MP11SE", instrument_type: "Piano", description: "88 Key Stage Piano/Master Contoller", price: "2,799.00", category_id: Category.find(3).id, brand_id: Brand.find(14).id)
     # korg
+      minilogue = User.find(1).instruments.create(model: "Minilogue", instrument_type: "Synthesizer", description: "4-Voice Analog Synthesizer", price: "499.00", category_id: Category.find(3).id, brand_id: Brand.find(15).id)
+      kronos = User.find(2).instruments.create(model: "Kronos", instrument_type: "Synthesizer", description: "88 Note Keyboard Synthesizer", price: "3,899.00", category_id: Category.find(3).id, brand_id: Brand.find(15).id)
+      kross = User.find(3).instruments.create(model: "Kross 2-88-M", instrument_type: "Synthesizer", description: "88 Key Synthesizer", price: "1,299.00", category_id: Category.find(3).id, brand_id: Brand.find(15).id)
 # create reviews
   # string
     # martin
-      # (instrument)
-        # title
-        # content
-        # rating
+      # d28
+      # d45
+      # d15
     # taylor
+      # ce1
+      # ce2
+      # gsmini
     # gibson
+      # lespaul
+      # thunderbird
+      # flyingv
     # fender
+      # tele
+      # strat
+      # jazzmaster
     # ibanez
+      # s1070pbz
+      # rg652ahm
+      # pn12e
   # percussion
     # sonor
+      # aq2
+      # sq1
+      # vintage
     # gretsch
+      # catalina
+      # brooklyn
+      # renown
     # pearl
+      # cabana
+      # compact
+      # decade
     # ludwig
+      # classic
+      # element
+      # breakbeats
     # bdc
+      # legend
+      # birch
+      # etimoe
   # keyboard
     # yamaha
+      # f51
+      # arius
+      # ypg535
     # casio
+      # privia
+      # casiotone
+      # ap710bk
     # roland
+      # gopiano
+      # rd88
+      # gp609
     # kawai
+      # ca58
+      # es8
+      # mp11se
     # korg
+      # minilogue
+      # kronos
+      # kross
