@@ -28,8 +28,10 @@ ActiveRecord::Schema.define(version: 2020_06_29_155453) do
   end
 
   create_table "instruments", force: :cascade do |t|
-    t.string "type"
+    t.string "model"
+    t.string "instrument_type"
     t.string "description"
+    t.string "price"
     t.integer "brand_id"
     t.integer "category_id"
     t.integer "user_id"
