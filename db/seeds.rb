@@ -24,7 +24,7 @@
     casio = keyboard.brands.create(name: "Casio", available: true)
     roland = keyboard.brands.create(name: "Roland", available: true)
     kawai = keyboard.brands.create(name: "Kawai", available: true)
-    korg = keyboard.brands.create(name: "korg", available: true)
+    korg = keyboard.brands.create(name: "Korg", available: true)
 # create instruments
   # string
     # martin
@@ -66,7 +66,7 @@
       breakbeats = User.find(3).instruments.create(model: "Breakbeats by Questlove", instrument_type: "Drum Set", description: "4-Piece", price: "407.00", category_id: Category.find(2).id, brand_id: Brand.find(9).id)
     # bdc
       legend = User.find(1).instruments.create(model: "Legend Series", instrument_type: "Drum Set", description: "7-Piece", price: "5,940.27", category_id: Category.find(2).id, brand_id: Brand.find(10).id)
-      birch = User.find(2).instruments.create(model: "Legend Club Birch", instrument_type: "Drum Set", description: "Birch 3-Piece", price: "2,569", category_id: Category.find(2).id, brand_id: Brand.find(10).id)
+      birch = User.find(2).instruments.create(model: "Legend Club", instrument_type: "Drum Set", description: "Birch 3-Piece", price: "2,569", category_id: Category.find(2).id, brand_id: Brand.find(10).id)
       etimoe = User.find(3).instruments.create(model: "Wild Etimoe", instrument_type: "Drum Set", description: "4-Piece", price: "3,599.99", category_id: Category.find(2).id, brand_id: Brand.find(10).id)
   # keyboard
     # yamaha
