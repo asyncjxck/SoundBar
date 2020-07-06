@@ -1,0 +1,8 @@
+<h2>New</h2>
+<%= form_for @brand do |f| %>
+  <%= f.label :category %><br>
+  <%= f.text_field :category_id %><br>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.submit 'Create Brand and add Instruments' %>
+<% end %>

@@ -8,23 +8,23 @@
   keyboard = Category.create(name: "keyboard")
 # create brands
   # string
-    martin = string.brands.create(name: "Martin", available: true)
-    taylor = string.brands.create(name: "Taylor", available: true)
-    gibson = string.brands.create(name: "Gibson", available: true)
-    fender = string.brands.create(name: "Fender", available: true)
-    ibanez = string.brands.create(name: "Ibanez", available: true)
+    martin = string.brands.create(name: "Martin")
+    taylor = string.brands.create(name: "Taylor")
+    gibson = string.brands.create(name: "Gibson")
+    fender = string.brands.create(name: "Fender")
+    ibanez = string.brands.create(name: "Ibanez")
   # percussion
-    sonor = percussion.brands.create(name: "Sonor", available: true)
-    gretsch = percussion.brands.create(name: "Gretsch", available: true)
-    pearl = percussion.brands.create(name: "Pearl", available: true)
-    ludwig = percussion.brands.create(name: "Ludwig", available: true)
-    bdc = percussion.brands.create(name: "British Drum Company", available: true)
+    sonor = percussion.brands.create(name: "Sonor")
+    gretsch = percussion.brands.create(name: "Gretsch")
+    pearl = percussion.brands.create(name: "Pearl")
+    ludwig = percussion.brands.create(name: "Ludwig")
+    bdc = percussion.brands.create(name: "British Drum Company")
   # keyboard
-    yamaha = keyboard.brands.create(name: "Yamaha", available: true)
-    casio = keyboard.brands.create(name: "Casio", available: true)
-    roland = keyboard.brands.create(name: "Roland", available: true)
-    kawai = keyboard.brands.create(name: "Kawai", available: true)
-    korg = keyboard.brands.create(name: "Korg", available: true)
+    yamaha = keyboard.brands.create(name: "Yamaha")
+    casio = keyboard.brands.create(name: "Casio")
+    roland = keyboard.brands.create(name: "Roland")
+    kawai = keyboard.brands.create(name: "Kawai")
+    korg = keyboard.brands.create(name: "Korg")
 # create instruments
   # string
     # martin

@@ -14,7 +14,6 @@ ActiveRecord::Schema.define(version: 2020_06_29_155453) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
-    t.boolean "available"
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
