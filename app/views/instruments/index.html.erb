@@ -1,3 +1,6 @@
+<h2>Instruments</h2>
+<%= link_to("Create New Instrument", instruments_new_url) %>
+<h3>List of Instruments</h3>
 <% @instruments.each do |x| %>
   <%= x.brand.name %>
   <%= x.model %>

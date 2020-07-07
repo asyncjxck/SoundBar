@@ -288,3 +288,5 @@
         kross1 = User.find(1).reviews.create(rating: 5, title: "Not too bad", content: "Good, but could be better", instrument_id: Instrument.find(45).id)
         kross2 = User.find(2).reviews.create(rating: 2, title: "Awful", content: "Not impressed", instrument_id: Instrument.find(45).id)
         kross3 = User.find(3).reviews.create(rating: 10, title: "Incredible", content: "Perfect!", instrument_id: Instrument.find(45).id)
+
+puts "Seeds Created Successfully"

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :categories, only: :index
 # brand
   resources :brands, only: [:index, :create, :new] do
-    resources :instruments, only: [:index, :new]
+    resources :instruments, only: [:index, :show, :create, :new]
   end
 # instruments
   resources :instruments, only: [:create]

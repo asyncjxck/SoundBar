@@ -1,8 +1,11 @@
 <h2>New</h2>
+
+<%= render partial: '/errors', locals: { record: @brand } %>
+
 <%= form_for @brand do |f| %>
-  <%= f.label :category %><br>
+  <%= f.label :category %>
   <%= f.text_field :category_id %><br>
-  <%= f.label :name %><br>
+  <%= f.label :name %>
   <%= f.text_field :name %><br>
   <%= f.submit 'Create Brand and add Instruments' %>
 <% end %>

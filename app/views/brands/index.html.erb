@@ -1,4 +1,7 @@
 <h2>Index</h2>
-<% @brands.each do |x| %>
-  <%= x.name %><br>
+
+<%= link_to 'Create New Brand', brands_path %>
+<% @brands.each do |brand| %>
+  <h3><%= link_to brand.name, brand_instruments_path(brand) %></h3>
+  <p><%= brand.instruments.count %> Instruments Total</p>
 <% end %>
