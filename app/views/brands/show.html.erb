@@ -1,0 +1,8 @@
+<h2>Show Brands</h2>
+
+<% @brand.instruments.each do |instrument| %>
+      <h4><%= instrument.model %></h4>
+      <p><%= instrument.instrument_type %></p>
+      <p><%= instrument.description %></p>
+      <p><%= instrument.price %></p>
+    <% end %>

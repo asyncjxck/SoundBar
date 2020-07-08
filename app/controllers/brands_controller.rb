@@ -18,6 +18,10 @@ class BrandsController < ApplicationController
       end
   end
 
+  def show
+    @brand = Brand.find(params[:id])
+  end
+
   private
 
   def brand_params
