@@ -1,8 +1,12 @@
 <h2>Show Brands</h2>
+<% if @brand.instruments.empty? %>
+  <p>Looks like there aren't any listed instruments for this brand. Would you like to <%= link_to("create one?", instruments_new_url) %>
+<% else %>
 
-<% @brand.instruments.each do |instrument| %>
-      <h4><%= instrument.model %></h4>
-      <p><%= instrument.instrument_type %></p>
-      <p><%= instrument.description %></p>
-      <p><%= instrument.price %></p>
-    <% end %>
+  <% @brand.instruments.each do |instrument| %>
+        <h4><%= instrument.model %></h4>
+        <p><%= instrument.instrument_type %></p>
+        <p><%= instrument.description %></p>
+        <p><%= instrument.price %></p>
+      <% end %>
+<% end %>

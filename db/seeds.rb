@@ -3,9 +3,9 @@
   ruby = User.create(name: "Ruby", email: "ruby@kitten.com", password_digest: "2222")
   blue = User.create(name: "Blue", email: "blue@fatcat.com", password_digest: "3333")
 # create categories
-  string = Category.create(name: "string")
-  percussion = Category.create(name: "percussion")
-  keyboard = Category.create(name: "keyboard")
+  string = Category.create(name: "String")
+  percussion = Category.create(name: "Percussion")
+  keyboard = Category.create(name: "Keyboard")
 # create brands
   # string
     martin = string.brands.create(name: "Martin")

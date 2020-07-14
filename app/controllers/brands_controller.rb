@@ -12,7 +12,7 @@ class BrandsController < ApplicationController
       @category = Category.all
       @brand = Brand.create(brand_params)
       if @brand.save
-        redirect_to new_brand_instrument_path(@brand)
+        redirect_to brand_path(@brand)
       else
         render :new
       end

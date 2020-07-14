@@ -9,6 +9,7 @@ class InstrumentsController < ApplicationController
 
   def create
     @instrument = Instrument.create(instrument_params)
+    # byebug
     if @instrument.save
       redirect_to instruments_path(@instrument)
     else
@@ -16,9 +17,13 @@ class InstrumentsController < ApplicationController
     end
   end
 
+  def show
+    @instrument = Instrument.new
+  end
+
   private
 
   def instrument_params
-    params.require(:instrument).permit(:model, :instrument_type, :description, :price, :category_id, :brand_id, :user_id)
+    params.require(:instrument).permit(:instrument, :model, :instrument_type, :description, :price, :category_id, :brand_id, :user_id)
   end
 end
