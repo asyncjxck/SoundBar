@@ -2,8 +2,8 @@
 <%= link_to("Create New Instrument", instruments_new_url) %>
 <h3>List of Instruments</h3>
 <% @instruments.each do |instrument| %>
-  <%= link_to instrument.brand.name, instrument_path(instrument) %>
-  <%= x.model %>
-  <%= x.description %>
-  <%= x.price %><br>
+  <strong><%= link_to instrument.brand.name, brand_path(instrument.brand) %></strong><br>
+  • <%= link_to instrument.model, instrument_path(instrument) %><br>
+  • <%= instrument.description %><br>
+  • <%= instrument.price %><br>
 <% end %>

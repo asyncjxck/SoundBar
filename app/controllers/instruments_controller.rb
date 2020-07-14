@@ -18,7 +18,7 @@ class InstrumentsController < ApplicationController
   end
 
   def show
-    @instrument = Instrument.new
+    @instrument = Instrument.find(params[:id])
   end
 
   private

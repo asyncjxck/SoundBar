@@ -132,7 +132,7 @@
         flyingv3 = User.find(3).reviews.create(rating: 10, title: "Incredible", content: "Perfect!", instrument_id: Instrument.find(9).id)
     # fender
       # tele
-        tele1 = User.find(1).reviews.create(rating: 5, title: "Not too bad", content: "Good, but could be better", instrument_id: Instrument.find(1).id)
+        tele1 = User.find(1).reviews.create(rating: 5, title: "Not too bad", content: "Good, but could be better", instrument_id: Instrument.find(10).id)
         tele2 = User.find(2).reviews.create(rating: 2, title: "Awful", content: "Not impressed", instrument_id: Instrument.find(10).id)
         tele3 = User.find(3).reviews.create(rating: 10, title: "Incredible", content: "Perfect!", instrument_id: Instrument.find(10).id)
       # strat

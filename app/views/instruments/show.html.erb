@@ -1,1 +1,11 @@
-<%= render partial: 'new_instrument'%>
+<h3>Show Instruments</h3>
+
+<h4><%= @instrument.brand.name %> <%= @instrument.model %></h4>
+<p><%= @instrument.instrument_type %></p>
+<p><%= @instrument.description %></p>
+<p><%= @instrument.price %></p><br>
+<h3>Reviews</h3>
+<% @instrument.reviews.each do |review| %>
+  <p><%= review.rating %>/10</p>
+  <p><%= review.content %><p>
+<% end %>
