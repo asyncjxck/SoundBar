@@ -1,7 +1,15 @@
 <h2>Index</h2>
 
 <%= link_to 'Create New Brand', new_brand_path %>
-<% @brands.each do |brand| %>
-  <h3><%= link_to brand.name, brand_path(brand) %></h3>
-  <p><%= brand.instruments.count %> Instruments Total</p>
-<% end %>
+<table class='instruments-table'>
+  <tr>
+    <th>Brand</th>
+    <th>Instruments Available</th>
+  </tr>
+  <tr>
+    <% @brands.each do |brand| %>
+      <td><%= link_to brand.name, brand_path(brand) %></td>
+      <td><%= brand.instruments.count %></td>
+      <tr></tr>
+    <% end %>
+  </tr>
