@@ -1,6 +1,15 @@
 class InstrumentsController < ApplicationController
   def index
-    @instruments = Instrument.all.reverse
+    @instruments = Instrument.all
+    if @instruments_by_brand = Instrument.order('brand ASC')
+      @instruments = @instruments_by_brand
+    elsif @instruments_by_model = Instrument.order('model ASC')
+      @instruments = @instruments_by_model
+    elsif @instruments_by_instrument_type = Instrument.order('instrument_type ASC')
+      @instruments = @instrumnets_by_instrument_type
+    elsif @instruments_by_price = Instrument.order('price ASC')
+      @instruments = @instruments_by_price
+    end
   end
 
   def new
