@@ -1,4 +1,5 @@
 <h2>Show Brands</h2>
+<h3><%= @brand.name %></h3>
 <% if @brand.instruments.empty? %>
   <p>Looks like there aren't any listed instruments for this brand. Would you like to <%= link_to("create one?", instruments_new_url) %>
 <% else %>

@@ -5,11 +5,20 @@
   <tr>
     <th>Brand</th>
     <th>Instruments Available</th>
+    
   </tr>
-  <tr>
     <% @brands.each do |brand| %>
+    <tr>
+
       <td><%= link_to brand.name, brand_path(brand) %></td>
-      <td><%= brand.instruments.count %></td>
-      <tr></tr>
-    <% end %>
-  </tr>
+
+      <td>
+        <%= brand.instruments.count %><br>
+
+        <% brand.instruments.each do |instrument| %>
+          <%= instrument.name %>;
+        <% end %>
+
+      </td>
+    </tr>
+  <% end %>
