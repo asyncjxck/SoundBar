@@ -9,6 +9,7 @@
     <th><%= sortable "price" %></th>
     <th>Description</th>
     <th>Brand</th>
+    <th><%= sortable "created_at", "Date Listed" %></th>
   </tr>
 
   <% @instruments.each do |instrument| %>
@@ -18,6 +19,7 @@
       <td><%= instrument.price %></td>
       <td><%= instrument.description %></td>
       <td><%= link_to instrument.brand.name, brand_path(instrument.brand) %></td>
+      <td><%= instrument.created_at.strftime("%b %-d, %Y at %I:%M:%S %Z") %><td>
     </tr>
   <% end %>
 </table>
