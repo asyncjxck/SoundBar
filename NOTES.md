@@ -1,6 +1,7 @@
 # SoundBar
 
 Your models must:
+
   [x] Include at least one `has_many`, at least one `belongs_to`, and at least two `has_many :through` relationships
 
   [] Include a `many-to-many` relationship implemented with `has_many :through` associations. The join table must include a user-submittable attribute — that is to say, some attribute other than its foreign keys that can be submitted by the app's user
