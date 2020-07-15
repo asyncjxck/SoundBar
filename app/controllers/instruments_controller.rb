@@ -1,15 +1,8 @@
 class InstrumentsController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
   def index
-    @instruments = Instrument.all
-    if @instruments_by_brand = Instrument.order('brand ASC')
-      @instruments = @instruments_by_brand
-    elsif @instruments_by_model = Instrument.order('model ASC')
-      @instruments = @instruments_by_model
-    elsif @instruments_by_instrument_type = Instrument.order('instrument_type ASC')
-      @instruments = @instrumnets_by_instrument_type
-    elsif @instruments_by_price = Instrument.order('price ASC')
-      @instruments = @instruments_by_price
-    end
+    @instruments = Instrument.order(sort_column + ' ' + sort_direction)
   end
 
   def new
@@ -27,12 +20,25 @@ class InstrumentsController < ApplicationController
   end
 
   def show
-    @instrument = Instrument.find(params[:id])
+    if params[:id] == "new"
+      @instrument = Instrument.new
+      render 'new'
+    else
+      @instrument = Instrument.find(params[:id])
+    end
   end
 
   private
 
   def instrument_params
-    params.require(:instrument).permit(:instrument, :model, :instrument_type, :description, :price, :category_id, :brand_id, :user_id)
+    params.require(:instrument).permit(:instrument, :name, :instrument_type, :description, :price, :category_id, :brand_id, :user_id)
+  end
+
+  def sort_column
+    Instrument.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
   end
 end

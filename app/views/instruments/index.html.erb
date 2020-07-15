@@ -2,29 +2,23 @@
 <%= link_to("Create New Instrument", instruments_new_url) %>
 <h3>List of Instruments</h3>
 
-<p>Sort by: </p>
-  <%= link_to("Brand", @instruments_by_brand)%>
-  <%= link_to("Model", @instruments_by_model)%>
-  <%= link_to("Instrument Type", @instruments_by_instrument_type)%>
-  <%= link_to("Price", @instruments_by_price)%>
-
 <table class='instruments-table'>
-  <tr>
-    <th>Brand</th>
-    <th>Model</th>    
-    <th>Instrument Type</th>
-    <th>Description</th>
-    <th>Price</th>
+  <tr id="headers">
+    <th><%= sortable "name" %></th>    
+    <th><%= sortable "instrument_type" %></th>
+    <th><%= sortable "description" %></th>
+    <th><%= sortable "brand_id", "Brand" %></th>
+    <th><%= sortable "price" %></th>
   </tr>
-  <tr>
-    <% @instruments.each do |instrument| %>
-      <td><%= link_to instrument.brand.name, brand_path(instrument.brand) %></td>
-      <td><%= link_to instrument.model, instrument_path(instrument) %></td>
+
+  <% @instruments.each do |instrument| %>
+    <tr id="each-table">
+      <td><%= link_to instrument.name, instrument_path(instrument) %></td>
       <td><%= instrument.instrument_type %></td>
       <td><%= instrument.description %></td>
+      <td><%= link_to instrument.brand.name, brand_path(instrument.brand) %></td>
       <td><%= instrument.price %></td>
-      <tr></tr>
-    <% end %>
-  </tr>
+    </tr>
+  <% end %>
 </table>
 
