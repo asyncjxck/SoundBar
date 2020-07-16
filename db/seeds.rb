@@ -29,7 +29,7 @@
   # string
     # martin
       d26 = User.find(1).instruments.create(name: "D-26", instrument_type: "Guitar", description: "6-string Acoustic", price: 2899.00, category_id: Category.find(1).id, brand_id: Brand.find(1).id)
-      d43 = User.find(2).instruments.create(name: "D-43 Fire & Ice", instrument_type: "Guitar", description: "6-string Acoustic Special Edition", price: 29999.00, category_id: Category.find(1).id, brand_id: Brand.find(1).id)
+      d45 = User.find(2).instruments.create(name: "D-45 Fire & Ice", instrument_type: "Guitar", description: "6-string Acoustic Special Edition", price: 29999.00, category_id: Category.find(1).id, brand_id: Brand.find(1).id)
       d15 = User.find(3).instruments.create(name: "D-15", instrument_type: "Guitar", description: "6-string Auditorium Acoustic", price: 1279.00, category_id: Category.find(1).id, brand_id: Brand.find(1).id)
     # taylor
       ce304 = User.find(1).instruments.create(name: "304ce", instrument_type: "Guitar", description: "6-string Electric/Acoustic", price: 2199.00, category_id: Category.find(1).id, brand_id: Brand.find(2).id)
@@ -61,7 +61,7 @@
       compact = User.find(2).instruments.create(name: "Compact Traveler", instrument_type: "Drum Set", description: "Traveler 2-piece", price: 215.00, category_id: Category.find(2).id, brand_id: Brand.find(8).id)
       decade = User.find(3).instruments.create(name: "Decade", instrument_type: "Drum Set", description: "Maple 3-piece", price: 637.00, category_id: Category.find(2).id, brand_id: Brand.find(8).id)
     # ludwig
-      classic = User.find(1).instruments.create(name: "Classic", instrument_type: "Drum Set", description: "Oak Fab", price: 1949.00, category_id: Category.find(2).id, brand_id: Brand.find(9).id)
+      classic = User.find(1).instruments.create(name: "Classic", instrument_type: "Drum Set", description: "Oak Fab 3-Piece", price: 1949.00, category_id: Category.find(2).id, brand_id: Brand.find(9).id)
       element = User.find(2).instruments.create(name: "Element Evolution", instrument_type: "Drum Set", description: "5-Piece", price: 799.00, category_id: Category.find(2).id, brand_id: Brand.find(9).id)
       breakbeats = User.find(3).instruments.create(name: "Breakbeats by Questlove", instrument_type: "Drum Set", description: "4-Piece", price: 407.00, category_id: Category.find(2).id, brand_id: Brand.find(9).id)
     # bdc
@@ -72,7 +72,7 @@
     # yamaha
       f51 = User.find(1).instruments.create(name: "PSR-F51", instrument_type: "Keyboard", description: "61 Key Portable", price: 109.99, category_id: Category.find(3).id, brand_id: Brand.find(11).id)
       arius = User.find(2).instruments.create(name: "Arius YDP-142", instrument_type: "Piano", description: "Digital Console Piano", price: 1099.99, category_id: Category.find(3).id, brand_id: Brand.find(11).id)
-      ypg533 = User.find(3).instruments.create(name: "YPG-533", instrument_type: "Piano", description: "88 Key Portable Grand Piano", price: 109.99, category_id: Category.find(3).id, brand_id: Brand.find(11).id)
+      ypg535 = User.find(3).instruments.create(name: "YPG-535", instrument_type: "Piano", description: "88 Key Portable Grand Piano", price: 109.99, category_id: Category.find(3).id, brand_id: Brand.find(11).id)
     # casio
       privia = User.find(1).instruments.create(name: "Privia PX-S2800", instrument_type: "Piano", description: "88 Key Stage Piano", price: 849.00, category_id: Category.find(3).id, brand_id: Brand.find(12).id)
       casiotone = User.find(2).instruments.create(name: "Casiotone CT-S200", instrument_type: "Keyboard", description: "61 Key Portable Digital", price: 119.00, category_id: Category.find(3).id, brand_id: Brand.find(12).id)

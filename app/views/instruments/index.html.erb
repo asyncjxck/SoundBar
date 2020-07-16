@@ -11,7 +11,6 @@
     <th>Brand</th>
     <th><%= sortable "created_at", "Date Listed" %></th>
   </tr>
-
   <% @instruments.each do |instrument| %>
     <tr id="each-table">
       <td><%= link_to instrument.name, instrument_path(instrument) %></td>

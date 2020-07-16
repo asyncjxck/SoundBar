@@ -3,7 +3,6 @@ class InstrumentsController < ApplicationController
 
   def index
     @instruments = Instrument.order(sort_column + ' ' + sort_direction)
-    @brand = Brand.all.name
   end
 
   def new
@@ -29,8 +28,8 @@ class InstrumentsController < ApplicationController
     end
   end
 
-  private
 
+  private
   def instrument_params
     params.require(:instrument).permit(:instrument, :name, :instrument_type, :description, :price, :category_id, :brand_id, :user_id)
   end
