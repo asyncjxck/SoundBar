@@ -1,5 +1,5 @@
 class InstrumentsController < ApplicationController
-  helper_method :sort_column, :sort_direction, :brand_name
+  helper_method :sort_column, :sort_direction
 
   def index
     @instruments = Instrument.order(sort_column + ' ' + sort_direction)
@@ -41,12 +41,5 @@ class InstrumentsController < ApplicationController
 
   def sort_direction
     %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
-
-  def brand_name
-    @instrument = Instrument.all
-    @instrument.each do |instrument|
-      @brand = instrument.brand.name
-    end
   end
 end

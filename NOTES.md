@@ -34,57 +34,114 @@ Instrument resell. Users can list items, comment on/review other listed items.
   * Keyboard: Yamaha, Casio, Roland, Kawai, Korg
 ---
 ---
-### User
-	 * Name
-	 * Email
-	 * Password
-```ruby
-		* has_many :reviews		  
-		* has_many :instruments # created
-		* has_many :brands, through: :instruments
-		* has_many :categories, through: :instruments
-    * has_many :reviewed_instruments, through: :reviews, source: :instrument # reviewed
-    * has_one :cart
-```
-### Category
-	* Name
-```ruby
-		* has_many :brands
-		* has_many :instruments, through: :brands
-```
-### Brand
-	 * Name
-	 * Instrument category
-```ruby
-		* has_many :instruments
-		* has_many :reviews, through: :instruments
-		* belongs_to :category
-```
-### Instrument
-	* Model
-	* Instrument Type
-	* Description
-	* Price
-```ruby
-		* belongs_to :brand # (brand_id)
-		* belongs_to :category # (category_id)
-		* belongs_to :user # (user_id) creator
-		* has_many :reviews 
-    * has_many :users, through: :users # reviewer
-    * has_one_and_belongs_to_many :cart
-```
-### Review
-	* Rating
-	* Title
-	* Content
-```ruby
-		* belongs_to :user # (user_id)
-		* belongs_to :instrument # (instrument_id)
-```
-### Cart
-```ruby
-    * has_one :user
-```
+## Sessions
+  ### 
+## User
+  ### Attributes
+    * Name
+    * Email
+    * Password
+  ### Associations
+  ```ruby
+      * has_many :reviews		  
+      * has_many :instruments # created
+      * has_many :brands, through: :instruments
+      * has_many :categories, through: :instruments
+      * has_many :reviewed_instruments, through: :reviews, source: :instrument # reviewed
+      * has_one :cart
+  ```
+  ### Views
+    * signup (create)
+    * profile with edit functionality (show/edit/delete)
+  ### Controller
+    *
+  ### Routes
+    *
+
+## Category
+  ### Attributes
+    * Name
+  ### Associations
+  ```ruby
+      * has_many :brands
+      * has_many :instruments, through: :brands
+  ```
+  ### Views
+    *
+  ### Controller
+    *
+  ### Routes
+    *
+
+## Brand
+  ### Attributes
+    * Name
+    * Instrument category
+  ### Associations
+  ```ruby
+      * has_many :instruments
+      * has_many :reviews, through: :instruments
+      * belongs_to :category
+  ```
+  ### Views
+    * 
+  ### Controller
+    *
+  ### Routes
+    *
+
+## Instrument
+  ### Attributes
+    * Model
+    * Instrument Type
+    * Description
+    * Price
+  ### Associations
+  ```ruby
+      * belongs_to :brand # (brand_id)
+      * belongs_to :category # (category_id)
+      * belongs_to :user # (user_id) creator
+      * has_many :reviews 
+      * has_many :users, through: :users # reviewer
+      * has_one_and_belongs_to_many :cart
+  ```
+  ### Views
+    * Index - 
+    * New
+    * Show
+  ### Controller
+    *
+  ### Routes
+    *
+
+## Review
+  ### Attributes
+    * Rating
+    * Title
+    * Content
+  ### Associations
+  ```ruby
+      * belongs_to :user # (user_id)
+      * belongs_to :instrument # (instrument_id)
+  ```
+  ### Views
+    *
+  ### Controller
+    *
+  ### Routes
+    *
+
+## Cart
+  ### Associations
+  ```ruby
+      * has_one :user
+  ```
+  ### Views
+    *
+  ### Controller
+    *
+  ### Routes
+    *
  
 * scope method: filter instruments by brand/price/category/rating
 * model method: return avg rating of instruments in brand

@@ -3,11 +3,22 @@
 <% if @brand.instruments.empty? %>
   <p>Looks like there aren't any listed instruments for this brand. Would you like to <%= link_to("create one?", instruments_new_url) %>
 <% else %>
-  <h3><%= @brand.name %></h3>
-  <% @brand.instruments.each do |instrument| %>
-        <h4><%= link_to instrument.model, instrument_path(instrument) %></h4>
-        <p><%= instrument.instrument_type %></p>
-        <p><%= instrument.description %></p>
-        <p><%= instrument.price %></p>
+    <table class="instruments-table">
+      <tr id="headers">
+        <th>Name</th>
+        <th>Instrument Type</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Date Listed</th>
+      </tr>
+      <% @brand.instruments.each do |instrument| %>
+        <tr id="each-table">
+          <td><%= link_to instrument.name, instrument_path(instrument) %></td>
+          <td><%= instrument.instrument_type %></td>
+          <td><%= instrument.description %></td>
+          <td><%= instrument.price %></td>
+          <td><%= instrument.created_at.strftime("%b %-d, %Y at %I:%M:%S %Z") %><td>
+        </tr>
       <% end %>
-<% end %>
+    </table>
+  <% end %>
