@@ -7,6 +7,7 @@
   <%= f.text_field :description %><br>
   <%= f.label :price %><br>
   <%= f.text_field :price %><br>
+  <%#= f.hidden_field :brand_id, value: @brand.id %>
 
   <%= f.label :category, "Select Category" %><br>
   <%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true %><br>

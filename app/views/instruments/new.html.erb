@@ -2,4 +2,27 @@
 
 <%= render partial: '/errors', locals: { record: @instrument } %>
 
-<%= render partial: '/new_instrument', locals: { record: @instrument } %>
+<%= form_for @instrument do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :instrument_type %><br>
+  <%= f.text_field :instrument_type %><br>
+  <%= f.label :description %><br>
+  <%= f.text_field :description %><br>
+  <%= f.label :price %><br>
+  <%= f.text_field :price %><br>
+
+  <% if params[:brand_id] != nil %>
+    <%= f.hidden_field :brand_id, value: @brand.id %>
+    <%= f.hidden_field :category_id, value: Brand.find(@brand.id).category_id %>
+  <% elsif params[:brand_id] == nil %>
+    <%= f.label :category, "Select Category" %><br>
+    <%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true %><br>
+    <%= f.label :brand, "Select Brand" %><br>
+    <%= f.collection_select :brand_id, Brand.order(:name), :id, :name, include_blank: true %><br>
+  <% end %>
+
+  <%= f.label :user, "Select User" %><br>
+  <%= f.collection_select :user_id, User.order(:name), :id, :name, include_blank: true %><br>
+  <%= f.submit "Create Instrument"%>
+<% end %>

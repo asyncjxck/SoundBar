@@ -12,13 +12,10 @@ Rails.application.routes.draw do
   resources :categories, only: :index
 # brand
   resources :brands, only: [:index, :show, :create, :new] do
-    resources :instruments, only: [:index, :show, :create, :new]
+    resources :instruments, only: [:index, :show, :new]
   end
 # instruments
-  resources :instruments, only: [:create, :show]
-  get '/instruments', to: 'instruments#index'
-  get '/instruments/new', to: 'instruments#new'
-  post '/instruments', to: 'instruments#create'
+  resources :instruments, only: [:index, :new, :create, :show]
 # reviews 
   resources :reviews
 end
