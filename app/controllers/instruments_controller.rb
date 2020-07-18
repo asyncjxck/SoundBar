@@ -8,14 +8,15 @@ class InstrumentsController < ApplicationController
   def new
     @instrument = Instrument.new
     if params[:brand_id] != nil
-      @brand = Brand.find_by(id: params[:brand_id])
+      @brand = Brand.find(params[:brand_id])
     end
   end
 
   def create
     @instrument = Instrument.create(instrument_params)
+    @brand = Brand.find(params[:instrument][:brand_id])
     if @instrument.save
-      redirect_to brand_instruments_path(@instrument)
+      redirect_to brand_path(@brand)
     else
       render :new
     end

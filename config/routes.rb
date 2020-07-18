@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resources :categories, only: :index
 # brand
   resources :brands, only: [:index, :show, :create, :new] do
-    resources :instruments, only: [:index, :show, :new]
+    resources :instruments, only: [:show, :new]
   end
 # instruments
   resources :instruments, only: [:index, :new, :create, :show]
