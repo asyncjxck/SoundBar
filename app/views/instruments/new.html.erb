@@ -13,13 +13,13 @@
   <%= f.text_field :price %><br>
 
   <% if params[:brand_id] != nil %>
-    <%= f.hidden_field :brand_id, value: @brand.id %>
-    <%= f.hidden_field :category_id, value: Brand.find(@brand.id).category_id %>
+    <%= f.hidden_field :brand_id, value: @brand %>
+    <%= f.hidden_field :category_id, value: @category %>
   <% elsif params[:brand_id] == nil %>
     <%= f.label :category, "Select Category" %><br>
-    <%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true %><br>
+    <%= f.collection_select :category_id, Category.order(:name), :id, :name, include_blank: true, selected: @category %><br>
     <%= f.label :brand, "Select Brand" %><br>
-    <%= f.collection_select :brand_id, Brand.order(:name), :id, :name, include_blank: true %><br>
+    <%= f.collection_select :brand_id, Brand.order(:name), :id, :name, include_blank: true, selected: @brand %><br>
   <% end %>
 
   <%= f.label :user, "Select User" %><br>

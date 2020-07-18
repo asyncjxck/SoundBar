@@ -8,7 +8,8 @@ class InstrumentsController < ApplicationController
   def new
     @instrument = Instrument.new
     if params[:brand_id] != nil
-      @brand = Brand.find(params[:brand_id])
+      @brand = Brand.find(params[:brand_id]).id
+      @category = Category.find(Brand.find(@brand).category_id).id
     end
   end
 

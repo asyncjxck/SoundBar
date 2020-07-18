@@ -18,7 +18,7 @@
       <td><%= instrument.price %></td>
       <td><%= instrument.description %></td>
       <td><%= link_to instrument.brand.name, brand_path(instrument.brand) %></td>
-      <td><%= instrument.created_at.strftime("%b %-d, %Y at %I:%M:%S %Z") %><td>
+      <td><%= instrument.created_at.strftime("%b %-d, %Y") %><td>
     </tr>
   <% end %>
 </table>
