@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ /* i {
+   border-left: 2px solid red;
+ } */

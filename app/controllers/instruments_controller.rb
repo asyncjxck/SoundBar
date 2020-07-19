@@ -15,7 +15,9 @@ class InstrumentsController < ApplicationController
 
   def create
     @instrument = Instrument.create(instrument_params)
-    @brand = Brand.find(params[:instrument][:brand_id])
+    if params[:instrument][:brand_id] != ''
+      @brand = Brand.find(params[:instrument][:brand_id])
+    end
     if @instrument.save
       redirect_to brand_path(@brand)
     else
