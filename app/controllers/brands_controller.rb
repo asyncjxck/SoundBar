@@ -19,7 +19,22 @@ class BrandsController < ApplicationController
   end
 
   def show
-    @brand = Brand.find(params[:id])
+    @brand = Brand.find(params[:format])
+  end
+
+  def string
+    @brands = Brand.string
+    render :index
+  end
+
+  def keyboard
+    @brands = Brand.keyboard
+    render :index
+  end
+
+  def percussion
+    @brands = Brand.percussion
+    render :index
   end
 
   private

@@ -1,21 +1,34 @@
 Rails.application.routes.draw do
-  resources :carts
 # sessions
-  get '/' => 'sessions#welcome'
-  get '/login' => 'sessions#new'
-  post '/login' => 'sessions#create'
-  get '/signup' => 'users#new'
-  post '/signup' => 'users#create'
+  get '/',       to: 'sessions#welcome'
+  get '/login',  to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+
 # users
   resources :users
+  get '/signup',  to: 'users#new'
+  post '/signup', to: 'users#create'
+
+
 # category
   resources :categories, only: :index
+
 # brand
-  resources :brands, only: [:index, :show, :create, :new] do
+  resources :brands, only: [:index, :create, :new] do
     resources :instruments, only: [:show, :new]
   end
+  get 'brands/instruments', to: 'brands#show', as: 'brand_instruments'
+  get '/brands/string',     to: 'brands#string'
+  get '/brands/percussion', to: 'brands#percussion'
+  get '/brands/keyboard',   to: 'brands#keyboard'
+
 # instruments
   resources :instruments, only: [:index, :new, :create, :show]
+
 # reviews 
   resources :reviews
+
+# cart
+  resources :carts
+
 end

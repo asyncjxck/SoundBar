@@ -1,6 +1,12 @@
-<h2>Index Brands</h2>
+<h2>Index</h2>
+<%= link_to 'All Brands', brands_path %><br>
+<%= link_to 'String Brands', brands_string_path %><br>
+<%= link_to 'Percussion Brands', brands_percussion_path %><br>
+<%= link_to 'Keyboard Brands', brands_keyboard_path %><br>
 
-<%= link_to 'Create New Brand', new_brand_path %>
+<%= link_to 'Create New Brand', new_brand_path %><br>
+
+<br>
 <table class='instruments-table'>
   <tr>
     <th>Brand</th>
@@ -10,13 +16,13 @@
     <% @brands.each do |brand| %>
     <tr>
 
-      <td><%= link_to brand.name, brand_path(brand) %></td>
+      <td><%= link_to brand.name, brand_instruments_path(brand) %></td>
 
       <td>
-        <%= brand.instruments.count %><br>
+        <%= brand.instruments.count %> Instruments Available<br>
 
         <% brand.instruments.each do |instrument| %>
-          <%= instrument.name %>;
+          <%= link_to instrument.name,  instrument_path(instrument) %>;
         <% end %>
 
       </td>
