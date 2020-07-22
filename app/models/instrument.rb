@@ -8,5 +8,7 @@ class Instrument < ApplicationRecord
 
   validates_presence_of   :name, :instrument_type, :description, :price
 
-
+  scope :string,     -> {where(category: "1")}
+  scope :percussion, -> {where(category: "2")}
+  scope :keyboard,   -> {where(category: "3")}
 end

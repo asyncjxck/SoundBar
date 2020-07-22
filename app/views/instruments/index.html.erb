@@ -1,5 +1,8 @@
 <h2>Instruments</h2>
-<%= link_to("Create New Instrument", new_instrument_url) %>
+<%= link_to("Create New Instrument", new_instrument_url) %><br>
+<%= link_to("String", instruments_string_path) %>
+<%= link_to("Percussion", instruments_percussion_path) %>
+<%= link_to("Keyboard", instruments_keyboard_path) %>
 <h3>List of Instruments</h3>
 
 <table class='instruments-table'>
@@ -13,7 +16,7 @@
   </tr>
   <% @instruments.each do |instrument| %>
     <tr id="each-table">
-      <td><%= link_to instrument.name, instrument_path(instrument) %></td>
+      <td><%= link_to instrument.name, instruments_show_path(instrument) %></td>
       <td><%= instrument.instrument_type %></td>
       <td>$<%= instrument.price %></td>
       <td><%= instrument.description %></td>

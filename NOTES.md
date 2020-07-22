@@ -35,7 +35,16 @@ Instrument resell. Users can list items, comment on/review other listed items.
 ---
 ---
 ## Sessions
-  ### 
+  ### Views
+    * signup form
+    * login form
+  ### Routes
+    * get '/login', to: 'sessions#new'
+    * post '/login', to: 'sessions#create'
+    * get '/logout', to: 'sessions#destroy'
+    * get '/signup', to: 'users#new'
+    * post 'signup', to: 'users#create
+
 ## User
   ### Attributes
     * Name

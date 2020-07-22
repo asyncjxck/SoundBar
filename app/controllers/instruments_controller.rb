@@ -7,6 +7,8 @@ class InstrumentsController < ApplicationController
 
   def new
     @instrument = Instrument.new
+    @instruments = Brand.all
+    @categories = Category.all
     if params[:brand_id] != nil
       @brand = Brand.find(params[:brand_id]).id
       @category = Category.find(Brand.find(@brand).category_id).id
@@ -19,19 +21,29 @@ class InstrumentsController < ApplicationController
       @brand = Brand.find(params[:instrument][:brand_id])
     end
     if @instrument.save
-      redirect_to brand_path(@brand)
+      redirect_to brand_instruments_path(@brand)
     else
       render :new
     end
   end
 
   def show
-    if params[:id] == "new"
-      @instrument = Instrument.new
-      render 'new'
-    else
-      @instrument = Instrument.find(params[:id])
-    end
+    @instrument = Instrument.find(params[:id])
+  end
+
+  def string
+    @instruments = Instrument.string
+    render :index
+  end
+
+  def percussion
+    @instruments = Instrument.percussion
+    render :index
+  end
+
+  def keyboard
+    @instruments = Instrument.keyboard
+    render :index
   end
 
 

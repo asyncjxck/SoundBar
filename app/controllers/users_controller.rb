@@ -11,16 +11,15 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.save
-      redirect_to users_path(@user)
+      redirect_to user_path(@user)
     else
       render :new
     end
-    byebug
   end
 
   private
 
   def user_params
-     params.require(:user).permit(:name, :email, :password_digest)
+     params.require(:user).permit(:name, :email, :password_digest, :password_confirmation)
   end
 end

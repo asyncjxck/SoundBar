@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
 # sessions
-  get '/',       to: 'sessions#welcome'
-  get '/login',  to: 'sessions#new'
+  get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
 
 # users
   resources :users
@@ -15,15 +15,20 @@ Rails.application.routes.draw do
 
 # brand
   resources :brands, only: [:index, :create, :new] do
-    resources :instruments, only: [:show, :new]
+    resources :instruments, only: [:new]
   end
-  get 'brands/instruments', to: 'brands#show', as: 'brand_instruments'
+  get '/brands/instruments', to: 'brands#show', as: 'brand_instruments'
   get '/brands/string',     to: 'brands#string'
   get '/brands/percussion', to: 'brands#percussion'
   get '/brands/keyboard',   to: 'brands#keyboard'
 
 # instruments
-  resources :instruments, only: [:index, :new, :create, :show]
+  resources :instruments, only: [:index, :new, :create]
+  get '/instrument/:id',         to: 'instruments#show', as: 'instruments_show'
+  get '/instruments',            to: 'instruments#index'
+  get '/instruments/string',     to: 'instruments#string'
+  get '/instruments/percussion', to: 'instruments#percussion'
+  get '/instruments/keyboard',   to: 'instruments#keyboard'
 
 # reviews 
   resources :reviews
