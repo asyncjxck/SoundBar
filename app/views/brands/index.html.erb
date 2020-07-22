@@ -1,10 +1,9 @@
 <h2>Index</h2>
-<%= link_to 'String Brands', brands_string_path %><br>
-<%= link_to 'Percussion Brands', brands_percussion_path %><br>
-<%= link_to 'Keyboard Brands', brands_keyboard_path %><br>
-
 <%= link_to 'Create New Brand', new_brand_path %><br>
 
+<%= link_to 'String', brands_string_path %>
+<%= link_to 'Percussion', brands_percussion_path %>
+<%= link_to 'Keyboard', brands_keyboard_path %>
 <br>
 <table class='instruments-table'>
   <tr>
@@ -21,7 +20,7 @@
         <%= brand.instruments.count %> Instruments Available<br>
 
         <% brand.instruments.each do |instrument| %>
-          <%= link_to instrument.name,  instrument_path(instrument) %>;
+          <%= link_to instrument.name,  instruments_show_path(instrument) %>;
         <% end %>
 
       </td>
