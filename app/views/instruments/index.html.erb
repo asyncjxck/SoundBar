@@ -15,9 +15,9 @@
     <tr id="each-table">
       <td><%= link_to instrument.name, instrument_path(instrument) %></td>
       <td><%= instrument.instrument_type %></td>
-      <td><%= instrument.price %></td>
+      <td>$<%= instrument.price %></td>
       <td><%= instrument.description %></td>
-      <td><%= link_to instrument.brand.name, brand_path(instrument.brand) %></td>
+      <td><%= link_to instrument.brand.name, brand_instruments_path(instrument.brand) %></td>
       <td><%= instrument.created_at.strftime("%b %-d, %Y") %><td>
     </tr>
   <% end %>

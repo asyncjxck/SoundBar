@@ -130,18 +130,3 @@ Instrument resell. Users can list items, comment on/review other listed items.
     *
   ### Routes
     *
-
-## Cart
-  ### Associations
-  ```ruby
-      * has_one :user
-  ```
-  ### Views
-    *
-  ### Controller
-    *
-  ### Routes
-    *
- 
-* scope method: filter instruments by brand/price/category/rating
-* model method: return avg rating of instruments in brand
