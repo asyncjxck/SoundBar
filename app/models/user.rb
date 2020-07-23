@@ -8,6 +8,6 @@ class User < ApplicationRecord
   has_many :reviewed_instruments, through: :reviews, source: :instrument # reviewed
   has_one  :cart
   
-  validates_presence_of :name, :email, :password, :confirmation_password
-  validates_uniqueness_of :username
+  validates_presence_of :name, :email, :password_digest, :password_confirmation
+  validates_uniqueness_of :name
 end

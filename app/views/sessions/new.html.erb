@@ -1,0 +1,9 @@
+<h2>Log In</h2>
+
+<P><i><%= @error %><i></p>
+<%= form_tag %>
+<%= label_tag :email %>
+<%= text_field_tag :email %>
+<%= label_tag :password %>
+<%= password_field_tag :password_digest %>
+<%= submit_tag "Log In"%>
