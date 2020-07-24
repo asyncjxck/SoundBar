@@ -1,6 +1,6 @@
 class InstrumentsController < ApplicationController
-  before_action :current_user
-  
+  before_action :require_login
+
   def index
     @instruments = Instrument.order(sort_column + ' ' + sort_direction)
   end
@@ -51,12 +51,4 @@ class InstrumentsController < ApplicationController
   def instrument_params
     params.require(:instrument).permit(:instrument, :name, :instrument_type, :description, :price, :category_id, :brand_id, :user_id)
   end
-
-  # def sort_column
-  #   Instrument.column_names.include?(params[:sort]) ? params[:sort] : "name"
-  # end
-
-  # def sort_direction
-  #   %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  # end
 end
