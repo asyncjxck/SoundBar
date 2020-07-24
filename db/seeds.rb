@@ -17,7 +17,7 @@
     sonor = percussion.brands.create(name: "Sonor")
     gretsch = percussion.brands.create(name: "Gretsch")
     pearl = percussion.brands.create(name: "Pearl")
-    ludwig = percussion.brands.create(name: "Ludwig")
+    ludwig = percussion.brands.create(name: "Ludwig") 
     bdc = percussion.brands.create(name: "British Drum Company")
   # keyboard
     yamaha = keyboard.brands.create(name: "Yamaha")

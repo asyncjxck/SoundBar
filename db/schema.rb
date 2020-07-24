@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_213907) do
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
+    t.string "image"
     t.integer "category_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
