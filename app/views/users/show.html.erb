@@ -1,4 +1,3 @@
 <h2>Users Profile</h2>
-
-
-
+<h3>List of <%= @user.name %>'s Instruments</h3>
+<%= render partial: '/instruments_index', locals: { record: @instrument } %>

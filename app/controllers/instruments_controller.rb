@@ -1,5 +1,4 @@
 class InstrumentsController < ApplicationController
-  helper_method :sort_column, :sort_direction
 
   def index
     @instruments = Instrument.order(sort_column + ' ' + sort_direction)
@@ -52,11 +51,11 @@ class InstrumentsController < ApplicationController
     params.require(:instrument).permit(:instrument, :name, :instrument_type, :description, :price, :category_id, :brand_id, :user_id)
   end
 
-  def sort_column
-    Instrument.column_names.include?(params[:sort]) ? params[:sort] : "name"
-  end
+  # def sort_column
+  #   Instrument.column_names.include?(params[:sort]) ? params[:sort] : "name"
+  # end
 
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
+  # def sort_direction
+  #   %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  # end
 end

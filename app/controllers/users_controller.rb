@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    current_user
+    @instruments = current_user.instruments.order(sort_column + ' ' + sort_direction)
+  end
+
   private
 
   def user_params
