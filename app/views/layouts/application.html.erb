@@ -11,8 +11,14 @@
 
   <body>
   <h1>SoundBar</h1>
-  <%= link_to("Brands", brands_path) %>
-  <%= link_to("Instruments", instruments_path) %>
+  <% if @user %>
+    <%= link_to("Brands", brands_path) %>
+    <%= link_to("Instruments", instruments_path) %>
+    <%= link_to "Profile", user_path(@user) %>
+    <%= link_to "Logout", logout_path %>
+  <% else %>
+    <%= link_to "Create Account", signup_path %>
+  <% end %>
     <%= yield %>
   </body>
 </html>

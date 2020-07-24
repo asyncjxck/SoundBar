@@ -1,5 +1,6 @@
 class InstrumentsController < ApplicationController
-
+  before_action :current_user
+  
   def index
     @instruments = Instrument.order(sort_column + ' ' + sort_direction)
   end

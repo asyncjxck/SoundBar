@@ -1,8 +1,8 @@
 <h2>New User</h2>
 
-<%= render partial: '/errors', locals: { record: @user } %>
+<%= render partial: '/errors', locals: { record: @new_user } %>
 
-<%= form_for @user do |f| %>
+<%= form_for @new_user do |f| %>
   <%= f.label :name %><br>
   <%= f.text_field :name %><br>
   <%= f.label :email %><br>

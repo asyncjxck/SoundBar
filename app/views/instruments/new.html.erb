@@ -12,6 +12,8 @@
   <%= f.label :price %><br>
   <%= f.text_field :price %><br>
 
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
   <% if params[:brand_id] != nil %>
     <%= f.hidden_field :brand_id, value: @brand %>
     <%= f.hidden_field :category_id, value: @category %>
@@ -21,8 +23,6 @@
     <%= f.label :brand, "Select Brand" %><br>
     <%= f.collection_select :brand_id, @brands.order(:name), :id, :name, include_blank: true, selected: @brand %><br>
   <% end %>
-
-  <%= f.label :user, "Select User" %><br>
-  <%= f.collection_select :user_id, User.order(:name), :id, :name, include_blank: true %><br>
-  <%= f.submit "Create Instrument"%>
+  
+  <%= f.submit "Create Instrument" %>
 <% end %>
