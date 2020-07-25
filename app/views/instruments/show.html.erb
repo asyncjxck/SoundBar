@@ -4,7 +4,17 @@
 <p><%= @instrument.description %></p>
 <p>$<%= @instrument.price %></p><br>
 <h3>Reviews</h3>
-<% @instrument.reviews.each do |review| %>
-  <p><%= review.rating %>/10</p>
-  <p><%= review.content %><p>
-<% end %>
+<table class='reviews-table'>
+  <tr id="headers">
+    <th>Rating</th>    
+    <th>Title</th>
+    <th>Content</th>
+  </tr>
+  <% @reviews.each do |review| %>
+    <tr id="each-table">
+      <td><%= review.rating %>/10</td>
+      <td> <%= review.title %></td>
+      <td><%= review.content %></td>
+  <% end %>
+
+<p>Do you own this instrunment? Consider <%= link_to "writing a review", new_instrument_review_path(@instrument) %> to help other potential customers.</p>

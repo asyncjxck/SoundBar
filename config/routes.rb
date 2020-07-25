@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
 # users
-  resources :users
+  resources :users, only: [:show]
   get '/signup',  to: 'users#new'
   post '/signup', to: 'users#create'
 
@@ -25,7 +25,9 @@ Rails.application.routes.draw do
   get '/brands/keyboard',   to: 'brands#keyboard'
 
 # instruments
-  resources :instruments, only: [:index, :new, :create]
+  resources :instruments, only: [:index, :new, :create] do
+      resources :reviews, only: [:new, :create]
+  end
   get '/instrument/:id',         to: 'instruments#show', as: 'instruments_show'
   get '/instruments',            to: 'instruments#index'
   get '/instruments/string',     to: 'instruments#string'
@@ -33,7 +35,8 @@ Rails.application.routes.draw do
   get '/instruments/keyboard',   to: 'instruments#keyboard'
 
 # reviews 
-  resources :reviews
+  get '/reviews', to: 'reviews#new'
+  post '/reviews', to: 'reviews#create'
 
 # cart
   resources :carts
