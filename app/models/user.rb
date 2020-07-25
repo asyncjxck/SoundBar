@@ -9,5 +9,5 @@ class User < ApplicationRecord
   has_one  :cart
   
   validates_presence_of :name, :email, :password_digest, :password_confirmation
-  validates_uniqueness_of :name
+  validates_uniqueness_of :email
 end

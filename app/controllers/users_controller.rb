@@ -20,6 +20,7 @@ class UsersController < ApplicationController
   def show
     current_user
     @instruments = current_user.instruments.order(sort_column + ' ' + sort_direction)
+    # byebug
   end
 
   private

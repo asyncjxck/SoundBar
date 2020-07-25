@@ -16,7 +16,7 @@ class InstrumentsController < ApplicationController
   end
 
   def create
-    @instrument = Instrument.create(instrument_params)
+    @instrument = current_user.instruments.create(instrument_params)
     if params[:instrument][:brand_id] != ''
       @brand = Brand.find(params[:instrument][:brand_id])
     end

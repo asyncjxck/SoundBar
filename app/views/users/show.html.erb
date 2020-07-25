@@ -1,6 +1,6 @@
 <h2>Users Profile</h2>
-<h3>List of <%= @user.name %>'s Instruments</h3>
-<% if current_user.instruments != nil %>
+<h3>List of <%= current_user.name %>'s Instruments</h3>
+<% if current_user.instruments != [] %>
   <table class='instruments-table'>
     <tr id="headers">
       <th><%= sortable "name" %></th>    

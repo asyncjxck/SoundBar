@@ -14,7 +14,7 @@ class BrandsController < ApplicationController
       @category = Category.all
       @brand = Brand.create(brand_params)
       if @brand.save
-        redirect_to brand_path(@brand)
+        redirect_to brands_path(@brand)
       else
         render :new
       end
