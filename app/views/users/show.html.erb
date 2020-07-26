@@ -1,5 +1,8 @@
 <h2>Users Profile</h2>
-<h3>List of <%= current_user.name %>'s Instruments</h3>
+<% if current_user.reviews != nil %>
+  <%= link_to 'Your Reviews', reviews_path%>
+<% end %>
+<h3>List of <%= current_user.username %>'s Instruments</h3>
 <% if current_user.instruments != [] %>
   <table class='instruments-table'>
     <tr id="headers">
@@ -23,4 +26,8 @@
   </table>
 <% else %>
   <p>It looks like you don't have any instruments yet. Would you like to <%= link_to "create one", new_instrument_path%>?</p>
+<% end %>
+
+<% if current_user.reviews != nil %>
+  <%= link_to 'Your Reviews', reviews_path%>
 <% end %>

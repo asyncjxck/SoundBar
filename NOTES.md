@@ -141,9 +141,8 @@ Instrument resell. Users can list items, comment on/review other listed items.
     *
 
 <!-- ### Check Password Confirmation; make sure they match -->
-### remove create account link from signup page
-### remove table headers from user profile with no instruments
-### ??? render images with instrument#show
+<!-- ### remove create account link from signup page -->
+<!-- ### remove table headers from user profile with no instruments -->
 ### set category in instruments#new with brand.category_id
 <!-- ### set validation for instruments price to require an integer -->
 ### create uniform inputs for data base creation in instruments#new

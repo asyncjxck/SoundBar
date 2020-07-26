@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   resources :brands, only: [:index, :create, :new] do
     resources :instruments, only: [:new]
   end
-  get '/brands/instruments', to: 'brands#show', as: 'brand_instruments'
+  get '/brands/:id/instruments', to: 'brands#show', as: 'brand_instruments'
   get '/brands/string',     to: 'brands#string'
   get '/brands/percussion', to: 'brands#percussion'
   get '/brands/keyboard',   to: 'brands#keyboard'
@@ -37,8 +37,7 @@ Rails.application.routes.draw do
   get '/instruments/keyboard',   to: 'instruments#keyboard'
 
 # reviews 
-  get '/reviews', to: 'reviews#new'
-  post '/reviews', to: 'reviews#create'
+  resources :reviews, only: [:new, :create, :index]
 
 # cart
   resources :carts

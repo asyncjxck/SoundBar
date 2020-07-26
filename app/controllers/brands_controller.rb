@@ -14,14 +14,14 @@ class BrandsController < ApplicationController
       @category = Category.all
       @brand = Brand.create(brand_params)
       if @brand.save
-        redirect_to brands_path(@brand)
+        redirect_to brand_instruments_path(@brand)
       else
         render :new
       end
   end
 
   def show
-    @brand = Brand.find(params[:format])
+    @brand = Brand.find(params[:id])
   end
 
   def string

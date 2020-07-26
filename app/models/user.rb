@@ -11,5 +11,6 @@ class User < ApplicationRecord
   has_one  :cart
   
   validates_presence_of :username, :email, :password_digest, :password_confirmation
+  validates :twitter_uid, numericality: {allow_blank: true}
   validates_uniqueness_of :email
 end

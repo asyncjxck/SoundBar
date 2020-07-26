@@ -1,5 +1,8 @@
 class ReviewsController < ApplicationController
   before_action :require_login
+  def index
+    @reviews = current_user.reviews
+  end
 
   def new
     @review = Review.new

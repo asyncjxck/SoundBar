@@ -1,15 +1,15 @@
 class UsersController < ApplicationController
- def new
+  def new
     @new_user = User.new
   end
   
   def create
     @new_user = User.create(user_params)
-    if @new_user.save && params[:user][:password_digest] == params[:user][:password_confirmation]
+    if @new_user.save && params[:user][:password] == params[:user][:password_confirmation]
       session[:user_id] = @new_user.id
-      redirect_to users_path(@new_user)
+      redirect_to user_path(@new_user)
     else
-      if params[:user][:password_digest] != params[:user][:password_confirmation]
+      if params[:user][:password] != params[:user][:password_confirmation]
         @error = "Passwords do not match"
       end
       render :new
@@ -24,6 +24,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-     params.require(:user).permit(:name, :email, :password_digest, :password_confirmation)
+     params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 end

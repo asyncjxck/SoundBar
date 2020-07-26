@@ -15,6 +15,7 @@
       <td><%= review.rating %>/10</td>
       <td> <%= review.title %></td>
       <td><%= review.content %></td>
+    </tr>
   <% end %>
 
 <p>Do you own this instrunment? Consider <%= link_to "writing a review", new_instrument_review_path(@instrument) %> to help other potential customers.</p>
