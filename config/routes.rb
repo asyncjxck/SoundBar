@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 # sessions
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   get '/', to: 'sessions#new'
   post '/', to: 'sessions#create'
   get '/login', to: 'sessions#new'
@@ -7,9 +8,10 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
 # users
-  resources :users, only: [:show]
+  resources :users
   get '/signup',  to: 'users#new'
   post '/signup', to: 'users#create'
+  # get '/users/:id', to: 'users#show', as: 'users'
 
 
 # category

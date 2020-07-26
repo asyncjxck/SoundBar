@@ -1,10 +1,11 @@
 <h2>New User</h2>
 
+<%= @error %>
 <%= render partial: '/errors', locals: { record: @new_user } %>
 
 <%= form_for @new_user do |f| %>
-  <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
+  <%= f.label :username %><br>
+  <%= f.text_field :username %><br>
   <%= f.label :email %><br>
   <%= f.text_field :email%><br>
   <%= f.label :password %><br>
