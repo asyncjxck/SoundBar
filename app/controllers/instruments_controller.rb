@@ -27,6 +27,17 @@ class InstrumentsController < ApplicationController
       render :new
     end
   end
+    
+  def edit
+    @instrument = Instrument.find(params[:id])
+    @brands = Brand.all
+  end
+
+  def update
+    @instrument = Instrument.find(params[:id])
+    @instrument.update(params.require(:instrument).permit(:name, :instrument_type, :description, :price, :brand_id))
+    redirect_to instruments_show_path(@instrument)
+  end
 
   def show
     @instrument = Instrument.find(params[:id])
@@ -47,7 +58,6 @@ class InstrumentsController < ApplicationController
     @instruments = Instrument.keyboard
     render :index
   end
-
 
   private
   def instrument_params

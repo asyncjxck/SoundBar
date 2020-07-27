@@ -19,15 +19,16 @@ Rails.application.routes.draw do
 
 # brand
   resources :brands, only: [:index, :create, :new] do
-    resources :instruments, only: [:new]
+    resources :instruments, only: [:new, :destroy]
   end
   get '/brands/:id/instruments', to: 'brands#show', as: 'brand_instruments'
   get '/brands/string',     to: 'brands#string'
   get '/brands/percussion', to: 'brands#percussion'
   get '/brands/keyboard',   to: 'brands#keyboard'
+  get '/brand/:id/edit',     to: 'brands#edit', as: 'brands_edit'
 
 # instruments
-  resources :instruments, only: [:index, :new, :create] do
+  resources :instruments, only: [:index, :new, :create, :destroy, :edit, :update] do
       resources :reviews, only: [:new, :create]
   end
   get '/instrument/:id',         to: 'instruments#show', as: 'instruments_show'
@@ -35,6 +36,7 @@ Rails.application.routes.draw do
   get '/instruments/string',     to: 'instruments#string'
   get '/instruments/percussion', to: 'instruments#percussion'
   get '/instruments/keyboard',   to: 'instruments#keyboard'
+  patch '/instruments/:id',      to: 'instruments#update'
 
 # reviews 
   resources :reviews, only: [:new, :create, :index]

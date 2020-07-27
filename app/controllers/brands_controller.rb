@@ -22,6 +22,7 @@ class BrandsController < ApplicationController
 
   def show
     @brand = Brand.find(params[:id])
+    @instruments = @brand.instruments
   end
 
   def string
@@ -37,6 +38,10 @@ class BrandsController < ApplicationController
   def percussion
     @brands = Brand.percussion
     render :index
+  end
+
+  def edit
+    
   end
 
   private

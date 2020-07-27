@@ -145,5 +145,5 @@ Instrument resell. Users can list items, comment on/review other listed items.
 <!-- ### remove table headers from user profile with no instruments -->
 <!-- ### set category in instruments#new with brand.category_id -->
 <!-- ### set validation for instruments price to require an integer -->
-### create uniform inputs for data base creation in instruments#new
+<!-- ### create uniform inputs for data base creation in instruments#new -->
 ### create update functions for instruments & users

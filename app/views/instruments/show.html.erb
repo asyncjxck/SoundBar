@@ -3,6 +3,10 @@
 <p><%= @instrument.instrument_type %></p>
 <p><%= @instrument.description %></p>
 <p>$<%= @instrument.price %></p><br>
+<% if @instrument = current_user.instruments.find_by(id: @instrument.id) %>
+  <%= link_to "Edit", edit_instrument_path(@instrument) %>
+<% end %>
+
 <h3>Reviews</h3>
 <table class='reviews-table'>
   <tr id="headers">
