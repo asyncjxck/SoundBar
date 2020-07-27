@@ -39,6 +39,10 @@ class InstrumentsController < ApplicationController
     redirect_to instruments_show_path(@instrument)
   end
 
+  def destroy
+    
+  end
+
   def show
     @instrument = Instrument.find(params[:id])
     @reviews = @instrument.reviews

@@ -20,6 +20,20 @@ class BrandsController < ApplicationController
       end
   end
 
+  def edit
+    @brand = Brand.find(params[:id])
+  end
+
+  def update
+    @brand = Brand.find(params[:id])
+    @brand.update(params.require(:brand).permit(:name, :category))
+    redirect_to brand_instruments_path(@brand)
+  end
+
+  def destroy
+    
+  end
+
   def show
     @brand = Brand.find(params[:id])
     @instruments = @brand.instruments
@@ -39,11 +53,6 @@ class BrandsController < ApplicationController
     @brands = Brand.percussion
     render :index
   end
-
-  def edit
-    
-  end
-
   private
 
   def brand_params

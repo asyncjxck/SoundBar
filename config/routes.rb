@@ -11,24 +11,23 @@ Rails.application.routes.draw do
   resources :users
   get '/signup',  to: 'users#new'
   post '/signup', to: 'users#create'
-  # get '/users/:id', to: 'users#show', as: 'users'
-
 
 # category
   resources :categories, only: :index
 
 # brand
-  resources :brands, only: [:index, :create, :new] do
-    resources :instruments, only: [:new, :destroy]
+  resources :brands, only: [:index, :create, :new, :update] do
+    resources :instruments, only: [:new]
   end
   get '/brands/:id/instruments', to: 'brands#show', as: 'brand_instruments'
   get '/brands/string',     to: 'brands#string'
   get '/brands/percussion', to: 'brands#percussion'
   get '/brands/keyboard',   to: 'brands#keyboard'
-  get '/brand/:id/edit',     to: 'brands#edit', as: 'brands_edit'
+  get '/brands/:id/edit',   to: 'brands#edit', as: 'edit_brand'
+  patch '/brand/:id',       to: 'brands#update'
 
 # instruments
-  resources :instruments, only: [:index, :new, :create, :destroy, :edit, :update] do
+  resources :instruments, only: [:index, :new, :create, :destroy, :edit, :update, :destroy] do
       resources :reviews, only: [:new, :create]
   end
   get '/instrument/:id',         to: 'instruments#show', as: 'instruments_show'
