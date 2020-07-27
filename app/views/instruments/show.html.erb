@@ -3,10 +3,10 @@
 <p><%= @instrument.instrument_type %></p>
 <p><%= @instrument.description %></p>
 <p>$<%= @instrument.price %></p><br>
-<% if @instrument = current_user.instruments.find_by(id: @instrument.id) %>
+<% if @instrument == current_user.instruments.find_by(id: @instrument.id) %>
   <%= link_to "Edit", edit_instrument_path(@instrument) %>
-<% end %>
-
+<% end %><br>
+<p>Do you own this instrument? Consider <%= link_to "writing a review", new_instrument_review_path(@instrument) %> to help other potential customers.</p>
 <h3>Reviews</h3>
 <table class='reviews-table'>
   <tr id="headers">
@@ -22,4 +22,3 @@
     </tr>
   <% end %>
 
-<p>Do you own this instrunment? Consider <%= link_to "writing a review", new_instrument_review_path(@instrument) %> to help other potential customers.</p>

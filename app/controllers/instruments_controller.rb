@@ -40,7 +40,9 @@ class InstrumentsController < ApplicationController
   end
 
   def destroy
-    
+    @instrument = Instrument.find(params[:id])
+    @instrument.destroy
+    redirect_to instruments_path
   end
 
   def show

@@ -1,2 +1,3 @@
 <h2>Edit: <%= @instrument.brand.name %>, <%= @instrument.name %></h2>
+<%= link_to "Delete Instrument", @instrument, method: :delete, data: {confirm: "You sure?"} %><br><br>
 <%= render partial: '/instrument', locals: { record: @instrument }%>

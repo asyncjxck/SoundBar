@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @instrument = Instrument.find_by(params[id: :instrument_id]).id
+    @instrument = Instrument.find_by(id: params[:instrument_id])
   end
 
   def create

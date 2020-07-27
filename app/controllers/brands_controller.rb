@@ -29,11 +29,7 @@ class BrandsController < ApplicationController
     @brand.update(params.require(:brand).permit(:name, :category))
     redirect_to brand_instruments_path(@brand)
   end
-
-  def destroy
-    
-  end
-
+  
   def show
     @brand = Brand.find(params[:id])
     @instruments = @brand.instruments
