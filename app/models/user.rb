@@ -3,11 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   has_secure_password
 
-  has_many :reviews
-  has_many :instruments # created
-  has_many :brands, through: :instruments
-  has_many :categories, through: :instruments
-  has_many :reviewed_instruments, through: :reviews, source: :instrument # reviewed
+  has_many :reviews, :dependent => :destroy
+  has_many :instruments, :dependent => :destroy # created
+  has_many :brands, through: :instruments, :dependent => :destroy
+  has_many :categories, through: :instruments, :dependent => :destroy
+  has_many :reviewed_instruments, through: :reviews, source: :instrument, :dependent => :destroy # reviewed
   has_one  :cart
   
   validates_presence_of :username, :email, :password_digest, :password_confirmation

@@ -11,12 +11,23 @@
 
   <body>
   <h1>SoundBar</h1>
+  <div class="wrapper">
   <% if @user %>
-    <%= link_to("Brands", brands_path) %>
-    <%= link_to("Instruments", instruments_path) %>
-    <%= link_to "Profile", user_path(@user) %>
-    <%= link_to "Logout", logout_path %>
+       <% if !!current_user %>
+        <div class='dropdown'>
+            <span id='user-menu'>User Menu</span>
+            <div class='dropdown-content'>
+              <%= link_to "Instruments", instruments_path %><br>
+              <%= link_to "Brands", brands_path %><br>
+              <%= link_to "Profile", user_path(@user) %><br>
+              <%= link_to "Logout", logout_path %><br>
+            </div>
+        </div>
+      <% end %>
+
+
   <% end %>
     <%= yield %>
+  </div>
   </body>
 </html>

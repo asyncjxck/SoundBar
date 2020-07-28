@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
 # users
-  resources :users
+  resources :users, only: [:show, :edit, :update, :destroy]
   get '/signup',  to: 'users#new'
   post '/signup', to: 'users#create'
 
