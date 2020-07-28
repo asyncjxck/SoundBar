@@ -39,6 +39,9 @@ Rails.application.routes.draw do
 
 # reviews 
   resources :reviews, only: [:new, :create, :index]
+  get '/reviews/:id/edit', to: 'reviews#edit', as: 'edit_review'
+  patch '/reviews/:id',    to: 'reviews#update', as: 'review'
+  delete '/reviews/:id', to: 'reviews#delete', as: 'delete_review'
 
 # cart
   resources :carts

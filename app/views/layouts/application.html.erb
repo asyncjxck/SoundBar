@@ -11,9 +11,8 @@
 
   <body>
   <h1>SoundBar</h1>
-  <div class="wrapper">
-  <% if @user %>
-       <% if !!current_user %>
+    <div class="wrapper">
+      <% if !!current_user %>
         <div class='dropdown'>
             <span id='user-menu'>User Menu</span>
             <div class='dropdown-content'>
@@ -24,9 +23,6 @@
             </div>
         </div>
       <% end %>
-
-
-  <% end %>
     <%= yield %>
   </div>
   </body>

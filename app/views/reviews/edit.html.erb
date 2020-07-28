@@ -1,0 +1,3 @@
+<h2>Edit review for <%= @review.instrument.name %> by <%= @review.instrument.brand.name %></h2>
+<%= link_to "Delete", @review, method: :delete, data: {confirm: "You sure?"} %>
+<%= render partial: '/review', locals: { record: @review } %>
