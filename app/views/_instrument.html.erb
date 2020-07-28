@@ -10,7 +10,7 @@
   <% if params[:brand_id] != nil %>
     <%= f.hidden_field :brand_id, value: @brand %>
     <%= f.hidden_field :category_id, value: @category %>
-  <% elsif params[:brand_id] == nil %>
+  <% elsif params[:brand_id] == nil && @instrument != nil %>
     <%= f.label :brand, "Select Brand" %><br>
     <%= f.collection_select :brand_id, @brands.order(:name), :id, :name, include_blank: true, selected: @instrument.brand.id %><br>
   <% end %>

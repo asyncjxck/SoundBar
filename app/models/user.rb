@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :brands, through: :instruments, :dependent => :destroy
   has_many :categories, through: :instruments, :dependent => :destroy
   has_many :reviewed_instruments, through: :reviews, source: :instrument, :dependent => :destroy # reviewed
-  has_one  :cart
+  # has_one  :cart
   
   validates_presence_of :username, :email, :password_digest, :password_confirmation
   validates :twitter_uid, numericality: {allow_blank: true}
