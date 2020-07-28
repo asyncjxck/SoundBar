@@ -1,7 +1,8 @@
 <h2>Users Profile</h2>
 <% if current_user.reviews != nil %>
   <%= link_to 'Your Reviews', reviews_path%>
-<% end %>
+<% end %><br>
+<%= link_to 'Edit Profile', edit_user_path(current_user) %>
 <h3>List of <%= current_user.username %>'s Instruments</h3>
 <% if current_user.instruments != [] %>
   <table class='instruments-table'>

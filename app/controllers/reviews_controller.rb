@@ -15,6 +15,14 @@ class ReviewsController < ApplicationController
     redirect_to instruments_show_path(@instrument)
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
 
   private
   def review_params

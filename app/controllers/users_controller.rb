@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @new_user = User.create(user_params)
     if @new_user.save && params[:user][:password] == params[:user][:password_confirmation]
-      session[:user_id] = @new_user.id
+      login(@new_user)
       redirect_to user_path(@new_user)
     else
       if params[:user][:password] != params[:user][:password_confirmation]
@@ -20,6 +20,21 @@ class UsersController < ApplicationController
     current_user
     @instruments = current_user.instruments.order(sort_column + ' ' + sort_direction)
   end
+
+  def edit
+  end
+
+  def update
+    current_user.update(params.require(:user).permit(:username, :email, :password, :password_confirmation))
+    redirect_to user_path(current_user)
+  end
+
+  def destroy
+    current_user.destroy
+    session.clear
+    redirect_to login_path
+  end
+
 
   private
 

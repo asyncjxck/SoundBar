@@ -1,7 +1,3 @@
-<h2>New User</h2>
-
-<%= @error %>
-<%= render partial: '/errors', locals: { record: @new_user } %>
 <%= form_for @new_user do |f| %>
   <%= f.label :username %><br>
   <%= f.text_field :username %><br>
@@ -13,5 +9,3 @@
   <%= f.password_field :password_confirmation %><br>
   <%= f.submit "Create Profile" %>
 <% end %>
-
-<p>Already have an account? Log in <%= link_to "here", login_path %>.</p>
