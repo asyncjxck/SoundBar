@@ -18,7 +18,7 @@
             <div class='dropdown-content'>
               <%= link_to "Instruments", instruments_path %><br>
               <%= link_to "Brands", brands_path %><br>
-              <%= link_to "Profile", user_path(@user) %><br>
+              <%= link_to "Profile", user_path(current_user) %><br>
               <%= link_to "Logout", logout_path %><br>
             </div>
         </div>

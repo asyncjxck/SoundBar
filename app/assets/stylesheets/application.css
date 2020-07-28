@@ -40,7 +40,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-   background: black; /* linear-gradient(35deg, rgb(99,123,168), rgb(124,130,160), rgb(140,94,125), rgb(218,56,86), rgb(174,54,82), rgb(149,57,84), rgb(94,60,85), rgb(124,69,87), rgb(139,81,92), rgb(183,107,101), rgb(246,74,71), rgb(249,84,67), rgb(245,87,79), rgb(231,79,82), rgb(171,69,65), rgb(169,52,63), rgb(160,38,68), rgb(132,49,74), rgb(147,72,95), rgb(93,67,88), rgb(93,82,105), rgb(74,69,90), rgb(34,40,71), rgb(23,31,66), rgb(14,20,47), rgb(7,7,7)); */
+   background: linear-gradient(35deg, rgb(99,123,168), rgb(124,130,160), rgb(140,94,125), rgb(218,56,86), rgb(174,54,82), rgb(149,57,84), rgb(94,60,85), rgb(124,69,87), rgb(139,81,92), rgb(183,107,101), rgb(246,74,71), rgb(249,84,67), rgb(245,87,79), rgb(231,79,82), rgb(171,69,65), rgb(169,52,63), rgb(160,38,68), rgb(132,49,74), rgb(147,72,95), rgb(93,67,88), rgb(93,82,105), rgb(74,69,90), rgb(34,40,71), rgb(23,31,66), rgb(14,20,47), rgb(7,7,7));
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #333;
