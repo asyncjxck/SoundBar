@@ -16,17 +16,17 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @review = Review.find(params[:id])
+    find_review    
   end
 
   def update
-    @review = Review.find(params[:id])
+    find_review    
     @review.update(params.require(:review).permit(:rating, :title, :content))
     redirect_to reviews_path
   end
 
   def delete
-    @review = Review.find(params[:id])
+    find_review    
     @review.destroy
     redirect_to reviews_path(current_user)
   end
@@ -36,4 +36,7 @@ class ReviewsController < ApplicationController
     params.require(:review).permit(:rating, :title, :content, :user_id, :instrument_id)
   end
 
+  def find_review
+    @review = Review.find(params[:id])
+  end
 end

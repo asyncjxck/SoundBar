@@ -9,8 +9,8 @@ class InstrumentsController < ApplicationController
     @instrument = Instrument.new
     @brands = Brand.all
     if params[:brand_id] != nil
-      @brand = Brand.find(params[:brand_id]).id
-      @category = Category.find(Brand.find(@brand).category_id).id
+      @brand = Brand.find(params[:brand_id])
+      @category = Category.find(@brand.category_id)
     end
   end
 
@@ -29,24 +29,24 @@ class InstrumentsController < ApplicationController
   end
     
   def edit
-    @instrument = Instrument.find(params[:id])
+    find_instrument
     @brands = Brand.all
   end
 
   def update
-    @instrument = Instrument.find(params[:id])
+    find_instrument
     @instrument.update(params.require(:instrument).permit(:name, :instrument_type, :description, :price, :brand_id))
     redirect_to instruments_show_path(@instrument)
   end
 
   def destroy
-    @instrument = Instrument.find(params[:id])
+    find_instrument
     @instrument.destroy
     redirect_to instruments_path
   end
 
   def show
-    @instrument = Instrument.find(params[:id])
+    find_instrument
     @reviews = @instrument.reviews
   end
 
@@ -68,5 +68,9 @@ class InstrumentsController < ApplicationController
   private
   def instrument_params
     params.require(:instrument).permit(:instrument, :name, :instrument_type, :description, :price, :category_id, :brand_id, :user_id)
+  end
+
+  def find_instrument
+    @instrument = Instrument.find(params[:id])
   end
 end

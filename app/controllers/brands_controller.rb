@@ -2,7 +2,7 @@ class BrandsController < ApplicationController
   before_action :require_login
   
   def index
-    @brands = Brand.all
+    @brands = Brand.all.order(sort_column + ' ' + sort_direction)
   end
 
   def new
@@ -21,18 +21,18 @@ class BrandsController < ApplicationController
   end
 
   def edit
-    @brand = Brand.find(params[:id])
+    find_brand
   end
 
   def update
-    @brand = Brand.find(params[:id])
+    find_brand
     @brand.update(params.require(:brand).permit(:name, :category))
     redirect_to brand_instruments_path(@brand)
   end
   
   def show
-    @brand = Brand.find(params[:id])
-    @instruments = @brand.instruments
+      find_brand
+      @instruments = @brand.instruments.order(sort_column + ' ' + sort_direction)
   end
 
   def string
@@ -49,9 +49,13 @@ class BrandsController < ApplicationController
     @brands = Brand.percussion
     render :index
   end
-  private
 
+  private
   def brand_params
       params.require(:brand).permit(:name, :category_id)
+  end
+
+  def find_brand
+    @brand = Brand.find(params[:id])
   end
 end
