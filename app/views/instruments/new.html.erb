@@ -3,6 +3,7 @@
 <% else %>
   <h2>New Instrument</h2>
 <% end %>
+<p><%= @error %></p>
 <%= render partial: '/errors', locals: { record: @instrument } %>
 
 <%= form_for @instrument do |f| %>

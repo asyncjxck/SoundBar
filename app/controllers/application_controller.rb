@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :sort_column, :sort_reviews_column, :sort_direction, :current_user, :require_login, :logged_in?
+  helper_method :sort_column, :sort_reviews_column, :sort_direction, :current_user, :require_login, :logged_in?, :set_new
   
   def sort_column
     Instrument.column_names.include?(params[:sort]) ? params[:sort] : "name"
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    @error = "You must be logged in to view this page."
+    @error = "You must be logged in to view this page." if logged_in? == false
     render '/sessions/new' unless logged_in?
   end
 
@@ -24,5 +24,17 @@ class ApplicationController < ActionController::Base
 
   def login(user)
     session[:user_id] = user.id
+  end
+
+  def set_new
+    new
+    @error = "The item you are looking for does not currently exist. Consider creating a new one."
+  end
+
+  def logout
+    if current_user.nil?
+      session.clear
+      redirect_to login_path
+    end
   end
 end

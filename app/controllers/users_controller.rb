@@ -17,8 +17,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    current_user
-    @instruments = current_user.instruments.order(sort_column + ' ' + sort_direction)
+    if current_user && current_user.id == User.find_by(id: params[:id]).id
+      @instruments = current_user.instruments.order(sort_column + ' ' + sort_direction)
+    elsif current_user.id != User.find_by(id: params[:id]).id
+      logout
+    else
+      logout
+    end
   end
 
   def edit
@@ -34,7 +39,6 @@ class UsersController < ApplicationController
     session.clear
     redirect_to login_path
   end
-
 
   private
 

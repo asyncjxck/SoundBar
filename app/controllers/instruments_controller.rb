@@ -46,8 +46,12 @@ class InstrumentsController < ApplicationController
   end
 
   def show
-    find_instrument
-    @reviews = @instrument.reviews
+    if find_instrument
+      @reviews = @instrument.reviews
+    else
+      set_new
+      render new_instrument_path
+    end
   end
 
   def string
@@ -71,6 +75,6 @@ class InstrumentsController < ApplicationController
   end
 
   def find_instrument
-    @instrument = Instrument.find(params[:id])
+    @instrument = Instrument.find_by(id: params[:id])
   end
 end

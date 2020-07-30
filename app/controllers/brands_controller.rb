@@ -31,8 +31,12 @@ class BrandsController < ApplicationController
   end
   
   def show
-      find_brand
+    if find_brand
       @instruments = @brand.instruments.order(sort_column + ' ' + sort_direction)
+    else
+      set_new
+      render new_brand_path
+    end
   end
 
   def string
@@ -56,6 +60,6 @@ class BrandsController < ApplicationController
   end
 
   def find_brand
-    @brand = Brand.find(params[:id])
+    @brand = Brand.find_by(id: params[:id])
   end
 end
