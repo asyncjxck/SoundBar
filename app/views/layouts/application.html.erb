@@ -14,10 +14,12 @@
     <div class="wrapper">
       <% if !!current_user %>
         <div class='dropdown'>
-            <span id='user-menu'>User Menu</span>
+            <span id='user-menu'>Menu</span>
             <div class='dropdown-content'>
               <%= link_to "Instruments", instruments_path %><br>
+              <%= link_to "Create New Instrument", new_instrument_path %><br>
               <%= link_to "Brands", brands_path %><br>
+              <%= link_to "Create New Brand", new_brand_path %><br>
               <%= link_to "Profile", user_path(current_user) %><br>
               <%= link_to "Logout", logout_path %><br>
             </div>

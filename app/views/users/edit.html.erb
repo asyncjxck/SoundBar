@@ -1,7 +1,7 @@
 <h2>Edit <%= current_user.username %>'s Profile</h2>
 <%= link_to "Return to Profile", user_path(current_user) %>
 <%= render partial: '/errors', locals: { record: current_user } %>
-<p><i>To successfully update your profile you must change your password.</i></p>
+<p><i>To update your profile you must succesfully enter your password and confirm, or change the password.</i></p>
 <%= form_for current_user do |f| %>
   <%= f.label :username %><br>
   <%= f.text_field :username %><br>

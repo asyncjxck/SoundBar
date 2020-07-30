@@ -1,4 +1,4 @@
-<h2>Users Profile</h2>
+<h2><%= current_user.username %>'s Profile</h2>
 <% if current_user.reviews != nil %>
   <%= link_to 'Your Reviews', reviews_path%>
 <% end %><br>
