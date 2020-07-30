@@ -7,12 +7,13 @@ class SessionsController < ApplicationController
     if auth
       @user = User.find_by(twitter_uid: auth['uid'])
       if @user.nil?
-        @user = User.create(username: auth)
+        @user = User.create(username: auth['info']['nickname'], password_digest: 'auth', password_confirmation: 'auth', twitter_uid: auth['uid'])
       end
       login(@user)
-      redirect_to users_path(@user)
+      @message = "Please set your password and email below."
+      render edit_user_path(current_user)
     else
-      @user = User.find_by(email: params[:email])
+      @user = User.find_by(username: params[:username])
       if !@user
         @error = "Account not found"
         render :new

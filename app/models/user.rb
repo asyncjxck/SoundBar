@@ -10,5 +10,5 @@ class User < ApplicationRecord
   
   validates_presence_of :username, :email, :password_digest, :password_confirmation
   validates :twitter_uid, numericality: {allow_blank: true}
-  validates_uniqueness_of :email
+  validates_uniqueness_of :username
 end
