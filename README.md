@@ -7,7 +7,7 @@
 ```shell
 git clone git@github.com:jackismoe/SoundBar.git
 ```
-#### If using VSCode:
+#### If using VSCode, open directory with:
 ```shell
 code SoundBar
 ```
