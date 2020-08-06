@@ -9,32 +9,34 @@ git clone git@github.com:jackismoe/SoundBar.git
 ```
 
 ### Check your Ruby version
-#### This project uses Ruby 2.6.1 & Rails 6.0.3
+#### This project uses Ruby 2.6.1 & Rails 6.0.3.2
 
 ```shell
 ruby -v
+rails -v
 ```
 
-The ouput should start with something like `ruby 2.5.1`
+The ouput should start with something like `ruby 2.6.1` & `Rails 6.0.3.2`
 
-If not, install the right ruby version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
+If not, install the right ruby or rails version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
 
 ```shell
-rbenv install 2.5.1
+rbenv install 2.6.1
+gem install rails -v 6.0.3.2
 ```
 
 ### Install dependencies
 
-Using [Bundler](https://github.com/bundler/bundler) and [Yarn](https://github.com/yarnpkg/yarn):
+Using [Bundler](https://github.com/bundler/bundler):
 
 ```shell
-bundle && yarn
+bundle install
 ```
 
 ### Initialize the database
 
 ```shell
-rails db:create db:migrate db:seed
+rails db:migrate && rails db:seed
 ```
 
 ## Serve
@@ -42,7 +44,7 @@ rails db:create db:migrate db:seed
 ```shell
 rails s
 ```
-### If attempting to log in via Twitter, make sure `gem 'thin'` is not commented out in the gemfile, and add https:// to the beginning of your url
+### If attempting to log in via Twitter, make sure `gem 'thin'` is not commented out in the gemfile line: 46, and add https:// to the beginning of your url
 
 ```shell
 thin start --ssl
