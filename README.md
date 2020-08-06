@@ -7,6 +7,10 @@
 ```shell
 git clone git@github.com:jackismoe/SoundBar.git
 ```
+#### If using VSCode:
+```shell
+code SoundBar
+```
 
 ### Check your Ruby version
 #### This project uses Ruby 2.6.1 & Rails 6.0.3.2
@@ -18,7 +22,7 @@ rails -v
 
 The ouput should start with something like `ruby 2.6.1` & `Rails 6.0.3.2`
 
-If not, install the right ruby or rails version using [rbenv](https://github.com/rbenv/rbenv) (it could take a while):
+If not, install the right ruby or rails version (it could take a while):
 
 ```shell
 rbenv install 2.6.1
