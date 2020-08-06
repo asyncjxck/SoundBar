@@ -17,9 +17,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user && current_user.id == User.find_by(id: params[:id]).id
+    if current_user && current_user.id == params[:id].to_i    
       @instruments = current_user.instruments.order(sort_column + ' ' + sort_direction)
-    elsif current_user.id != User.find_by(id: params[:id]).id
+    elsif current_user.id != params[:id].to_i
       logout
     else
       logout

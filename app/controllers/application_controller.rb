@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper_method :sort_column, :sort_reviews_column, :sort_direction, :current_user, :require_login, :logged_in?, :set_new
+  helper_method :sort_column, :sort_reviews_column, :sort_direction, :current_user, :require_login, :logged_in?, :set_new, :logout
   
   def sort_column
     Instrument.column_names.include?(params[:sort]) ? params[:sort] : "name"
@@ -32,7 +32,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logout
-    if current_user.nil?
+    if current_user.nil? || current_user.id != params[:id].to_i
       session.clear
       redirect_to login_path
     end

@@ -6,12 +6,13 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
-    @instrument = Instrument.find_by(id: params[:instrument_id])
+    @instrument = Instrument.find_by(id: params[:instrument_id]).id
   end
 
   def create
     @review = current_user.instruments.find_by(params[id: :instrument_id]).reviews.create(review_params)
-    @instrument = current_user.instruments.find_by(params[id: :instrument_id])
+    @instrument = Instrument.find_by(params[:review][:instrument_id])
+    @instrument.user_id = current_user.id
     redirect_to instruments_show_path(@instrument)
   end
 
