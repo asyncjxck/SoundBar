@@ -1,4 +1,6 @@
 # SoundBar
+## Description
+A private marketplace for instrument sales.
 
 ## Install
 
