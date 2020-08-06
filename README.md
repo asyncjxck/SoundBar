@@ -1,6 +1,4 @@
-# Project
-
-[SoundBar](https://github.com/jackismoe/SoundBar)
+# SoundBar
 
 ## Install
 
