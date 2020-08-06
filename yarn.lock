@@ -47,7 +47,7 @@
   dependencies:
     "@babel/types" "^7.10.3"
     jsesc "^2.5.1"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
     source-map "^0.5.0"
 
 "@babel/helper-annotate-as-pure@^7.10.1":
@@ -104,7 +104,7 @@
   dependencies:
     "@babel/helper-function-name" "^7.10.3"
     "@babel/types" "^7.10.3"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/helper-explode-assignable-expression@^7.10.3":
   version "7.10.3"
@@ -162,7 +162,7 @@
     "@babel/helper-split-export-declaration" "^7.10.1"
     "@babel/template" "^7.10.1"
     "@babel/types" "^7.10.1"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/helper-optimise-call-expression@^7.10.1", "@babel/helper-optimise-call-expression@^7.10.3":
   version "7.10.3"
@@ -181,7 +181,7 @@
   resolved "https://registry.yarnpkg.com/@babel/helper-regex/-/helper-regex-7.10.1.tgz#021cf1a7ba99822f993222a001cc3fec83255b96"
   integrity sha512-7isHr19RsIJWWLLFn21ubFt223PjQyg1HY7CZEMRr820HttHPpVvrsIN3bUOo44DEfFV4kBXO7Abbn9KTUZV7g==
   dependencies:
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/helper-remap-async-to-generator@^7.10.1", "@babel/helper-remap-async-to-generator@^7.10.3":
   version "7.10.3"
@@ -446,7 +446,7 @@
   integrity sha512-8bpWG6TtF5akdhIm/uWTyjHqENpy13Fx8chg7pFH875aNLwX8JxIxqm08gmAT+Whe6AOmaTeLPe7dpLbXt+xUw==
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.1"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/plugin-transform-classes@^7.10.3":
   version "7.10.3"
@@ -788,7 +788,7 @@
     "@babel/types" "^7.10.3"
     debug "^4.1.0"
     globals "^11.1.0"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
 
 "@babel/types@^7.10.1", "@babel/types@^7.10.3", "@babel/types@^7.4.4":
   version "7.10.3"
@@ -796,7 +796,7 @@
   integrity sha512-nZxaJhBXBQ8HVoIcGsf9qWep3Oh3jCENK54V4mRF7qaJabVsAYdbTtmSD8WmAp1R6ytPiu5apMwSXyxB1WlaBA==
   dependencies:
     "@babel/helper-validator-identifier" "^7.10.3"
-    lodash "^4.17.13"
+    lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
 "@csstools/convert-colors@^1.4.0":
