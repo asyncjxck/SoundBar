@@ -1,12 +1,12 @@
 <%= form_for @instrument do |f| %>
   <%= f.label :name %><br>
-  <%= f.text_field :name %><br>
+    <%= f.text_field :name %><br>
   <%= f.label :instrument_type %><br>
-  <%= f.text_field :instrument_type %><br>
+    <%= f.text_field :instrument_type %><br>
   <%= f.label :description %><br>
-  <%= f.text_field :description %><br>
+    <%= f.text_field :description %><br>
   <%= f.label :price %><br>
-  <%= f.text_field :price %><br>
+    <%= f.text_field :price %><br>
   <% if params[:brand_id] != nil %>
     <%= f.hidden_field :brand_id, value: @brand %>
     <%= f.hidden_field :category_id, value: @category %>
@@ -17,3 +17,4 @@
   
   <%= f.submit "Submit Instrument" %>
 <% end %>
+
