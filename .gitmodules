@@ -1,0 +1,7 @@
+[submodule "soundbar-backend"]
+ 	path = soundbar-backend
+ 	url = https://github.com/jackismoe/soundbar-backend
+   
+[submodule "soundbar-frontend"]
+ 	path = soundbar-frontend
+ 	url = https://github.com/jackismoe/soundbar-frontendcd 
