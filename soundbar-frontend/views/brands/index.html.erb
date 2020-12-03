@@ -1,0 +1,28 @@
+<h2>Brands</h2>
+<%= link_to 'Create New Brand', new_brand_path %><br>
+<div class='dropdown'>
+    <span id='user-menu'>Sort By Category</span>
+    <div class='dropdown-content'>
+      <%= link_to("String", brands_string_path) %>
+      <%= link_to("Percussion", brands_percussion_path) %>
+      <%= link_to("Keyboard", brands_keyboard_path) %><br>
+    </div>
+</div>
+<br>
+<table class='instruments-table'>
+  <tr>
+    <th><%= sortable 'name', "Brand" %></th>
+    <th>Instruments Available</th>
+    <th>Models Available</th>
+  </tr>
+    <% @brands.each do |brand| %>
+    <tr>
+      <td><%= link_to brand.name, brand_instruments_path(brand) %></td>
+      <td><%= brand.instruments.count %> Instruments Available<br></td>
+      <td>
+        <% brand.instruments.each do |instrument| %>
+          <%= link_to instrument.name,  instruments_show_path(instrument) %>;
+        <% end %>
+      </td>
+    </tr>
+  <% end %>

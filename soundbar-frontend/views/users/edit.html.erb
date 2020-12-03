@@ -1,0 +1,18 @@
+<h2>Edit <%= current_user.username %>'s Profile</h2>
+<%= link_to "Return to Profile", user_path(current_user) %>
+<%= render partial: '/errors', locals: { record: current_user } %>
+<p><i>To update your profile you must succesfully enter your password and confirm, or change the password.</i></p>
+<%= form_for current_user do |f| %>
+  <%= f.label :username %><br>
+  <%= f.text_field :username %><br>
+  <%= f.label :email %><br>
+  <%= f.text_field :email%><br>
+  <%= f.label :password %><br>
+  <%= f.password_field :password %><br>
+  <%= f.label :confirm_password %><br>
+  <%= f.password_field :password_confirmation %><br>
+  <%= f.submit "Submit New Profile" %>
+<% end %>
+<br>
+<br>
+<%= link_to "Delete Profile", current_user, method: :delete, data: {confirm: "This will delete your profile as well as any instruments, reviews, or brands you have posted for sale. Would you still like to delete?"} %><br><br>

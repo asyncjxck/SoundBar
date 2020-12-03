@@ -1,0 +1,9 @@
+<h2><%= @brand.name %></h2>
+<%= link_to "Edit", edit_brand_path(@brand) %>
+<% if @brand.instruments.empty? %>
+  <p>Looks like there aren't any listed instruments for this brand. Would you like to <%= link_to("create one?", new_brand_instrument_url(@brand)) %>
+<% else %>
+  <p>Would you like to <%= link_to("create a new instrument", new_brand_instrument_url(@brand)) %> for this brand?</p>
+  <%= render partial: '/instruments_index', locals: { record: @instrument } %>
+<% end %>
+

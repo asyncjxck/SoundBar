@@ -1,0 +1,21 @@
+
+<table class='instruments-table'>
+  <tr id="headers">
+    <th><%= sortable "name" %></th>    
+    <th><%= sortable "instrument_type" %></th>
+    <th><%= sortable "price" %></th>
+    <th>Description</th>
+    <th>Brand</th>
+    <th><%= sortable "created_at", "Date Listed" %></th>
+  </tr>
+  <% @instruments.each do |instrument| %>
+    <tr id="each-table">
+      <td><%= link_to instrument.name, instruments_show_path(instrument) %></td>
+      <td><%= instrument.instrument_type %></td>
+      <td>$<%= instrument.price %></td>
+      <td><%= instrument.description %></td>
+      <td><%= link_to instrument.brand.name, brand_instruments_path(instrument.brand) %></td>
+      <td><%= instrument.created_at.strftime("%b %-d, %Y") %><td>
+    </tr>
+  <% end %>
+</table>

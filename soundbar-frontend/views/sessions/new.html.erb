@@ -1,0 +1,12 @@
+<h2>Log In</h2>
+
+<P><i><%= @error %><i></p>
+<%= form_tag %><br>
+<%= label_tag :username %><br>
+<%= text_field_tag :username %><br>
+<%= label_tag :password %><br>
+<%= password_field_tag :password_digest %><br>
+<%= submit_tag "Log In"%>
+
+<p>Don't have an account? Sign up <%= link_to "here", signup_path %>.</p>
+<%= link_to('Log in with Twitter', '/auth/twitter') %>

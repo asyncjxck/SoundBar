@@ -1,0 +1,21 @@
+<h2>Reviews for <%= current_user.username%></h2>
+<h3>Reviews</h3>
+<table class='reviews-table'>
+  <tr id="headers">
+    <th></th>
+    <th>Title</th>
+    <th>Rating</th>    
+    <th>Content</th>
+    <th>Instrument</th>
+    <th>Brand</th>
+  </tr>
+  <% @reviews.each do |review| %>
+    <tr id="each-table">
+      <td><%= link_to 'Edit', edit_review_path(review) %></td>
+      <td> <%= review.title %></td>
+      <td><%= review.rating %>/10</td>
+      <td><%= review.content %></td>
+      <td><%= link_to review.instrument.name, instruments_show_path(review.instrument) %></td>
+      <td><%= link_to review.instrument.brand.name, brand_instruments_path(review.instrument.brand) %></td>
+    </tr>
+  <% end %>

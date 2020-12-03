@@ -1,0 +1,12 @@
+<h2>Instruments</h2>
+<h3>List of Instruments</h3>
+<%= link_to "Create New Instrument", new_instrument_path %><br>
+<div class='dropdown'>
+    <span id='user-menu'>Sort By Category</span>
+    <div class='dropdown-content'>
+      <%= link_to("String", instruments_string_path) %>
+      <%= link_to("Percussion", instruments_percussion_path) %>
+      <%= link_to("Keyboard", instruments_keyboard_path) %><br>
+    </div>
+</div>
+<%= render partial: '/instruments_index', locals: { record: @instrument } %>

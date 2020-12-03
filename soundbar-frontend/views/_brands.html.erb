@@ -1,0 +1,7 @@
+<%= form_for @brand do |f| %>
+  <%= f.label :category %><br>
+  <%= f.collection_select :category_id, Category.order(:name),:id,:name, include_blank: true %><br>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.submit 'Create Brand' %>
+<% end %>

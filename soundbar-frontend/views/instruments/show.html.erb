@@ -1,0 +1,27 @@
+<h2><%= @instrument.name %> by <%= @instrument.brand.name %></h2>
+<h3><strong>Name:</strong></h3>
+<p><%= @instrument.instrument_type %></p>
+<h3><strong>Description:</strong></h3>
+<p><%= @instrument.description %></p>
+<h3><strong>Price:</strong></h3>
+<p>$<%= @instrument.price %></p><br>
+<% if @instrument == current_user.instruments.find_by(id: @instrument.id) %>
+  <%= link_to "Edit", edit_instrument_path(@instrument) %>
+<% else %>
+  <p>Do you own this instrument? Consider <%= link_to "writing a review", new_instrument_review_path(@instrument) %> to help other potential customers.</p>
+<% end %><br>
+<h2>Reviews</h2>
+<table class='reviews-table'>
+  <tr id="headers">
+    <th>Rating</th>    
+    <th>Title</th>
+    <th>Content</th>
+  </tr>
+  <% @reviews.each do |review| %>
+    <tr id="each-table">
+      <td><%= review.rating %>/10</td>
+      <td> <%= review.title %></td>
+      <td><%= review.content %></td>
+    </tr>
+  <% end %>
+
